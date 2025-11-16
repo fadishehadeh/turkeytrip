@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>دليل رحلات إسطنبول</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+ body { font-family: Arial, sans-serif; background:#eef1f5; padding:20px; line-height:1.7; transition:0.3s; font-size:16px; }
+ h1 { color:#b71c1c; text-align:center; margin-bottom:30px; }
+ h2 { color:#0d47a1; margin-top:40px; display:flex; align-items:center; gap:10px; }
+ a { text-decoration:none; color:inherit; }
+ 
+ /* Accessibility buttons */
+ 
+ 
+
+ /* TOC grid */
+ .toc-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-top:20px; }
+ .toc-item { background:white; padding:18px; border-radius:12px; text-align:center; font-size:18px; font-weight:bold; color:#1a237e; box-shadow:0 3px 8px rgba(0,0,0,0.1); transition:0.3s; }
+ .toc-item:hover { transform:translateY(-5px); background:#e3f2fd; }
+ .toc-item i { font-size:26px; display:block; margin-bottom:10px; color:#c62828; }
+
+ /* Sections */
+ .section { background:white; padding:22px; border-radius:14px; margin-top:35px; box-shadow:0 3px 10px rgba(0,0,0,0.12); font-size:17px; }
+ .return { background:#fff8e1; padding:12px; border-radius:10px; margin-top:15px; border:1px solid #ffe0b2; font-weight:bold; }
+  /* أدوات إضافية */
+  .util-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin:20px 0; }
+  .util-card { background:#fff; padding:18px; border-radius:14px; box-shadow:0 3px 8px rgba(0,0,0,0.12); font-size:16px; }
+  .util-card h3 { margin-top:0; margin-bottom:8px; color:#b71c1c; font-size:16px; }
+  .util-card button { margin-top:8px; padding:8px 12px; border:none; border-radius:8px; background:#0d47a1; color:#fff; cursor:pointer; font-size:14px; }
+  .util-card select { width:100%; padding:8px; border-radius:8px; border:1px solid #ccc; margin-top:4px; }
+  .weather-box { margin-top:8px; background:#e3f2fd; padding:8px; border-radius:8px; font-size:13px; }
+  .back-top { position:fixed; bottom:20px; right:20px; width:42px; height:42px; border-radius:50%; border:none; cursor:pointer; background:#b71c1c; color:#fff; box-shadow:0 4px 10px rgba(0,0,0,0.2); font-size:18px; z-index:999; }
+@media (min-width: 768px) {
+  .toc-grid { grid-template-columns: repeat(3, 1fr); }
+  .util-grid { grid-template-columns: repeat(2, 1fr); }
+}
+  .util-grid { grid-template-columns: repeat(2, 1fr); }
+  body { font-size:22px; }
+}
+/* Mobile Enhancements Only */
+@media (max-width: 767px) {
+  body {font-size:30px !important; line-height:2.3 !important; padding:10px !important;}
+  h1 {font-size:38px !important;}
+  h2 {font-size:34px !important;}
+  .util-grid {grid-template-columns:1fr !important; gap:38px !important;}
+  .util-card {font-size:28px !important; padding:38px !important; border-radius:26px !important;}
+  .util-card button, .util-card select {font-size:28px !important; padding:22px !important; border-radius:20px !important; width:100% !important;}
+  .toc-grid {grid-template-columns:1fr !important; gap:32px !important;}
+  .toc-item {font-size:34px !important; padding:48px !important; border-radius:26px !important;}
+  .toc-item i {font-size:52px !important; margin-bottom:22px !important;}
+  .section {font-size:30px !important; padding:40px !important; border-radius:28px !important; margin-bottom:40px !important;}
+  input, select, button {font-size:28px !important; padding:20px !important; border-radius:18px !important;}
+  #searchBox {width:95% !important;}
+  .weather-box {font-size:26px !important; padding:20px !important;}
+  
+}
+
+  h1 { font-size:32px !important; }
+  h2 { font-size:30px !important; }
+
+  /* UTIL GRID */
+  .util-grid { grid-template-columns:1fr !important; gap:28px !important; }
+  .util-card {
+    font-size:24px !important;
+    padding:32px !important;
+    border-radius:22px !important;
+  }
+  .util-card button,
+  .util-card select {
+    font-size:24px !important;
+    padding:18px !important;
+    border-radius:16px !important;
+  }
+
+  /* TABLE OF CONTENT — BIG BUTTONS */
+  .toc-grid { grid-template-columns:1fr !important; gap:26px !important; }
+  .toc-item {
+    font-size:30px !important;       /* BIGGER TEXT */
+    padding:40px !important;         /* BIGGER AREA */
+    border-radius:24px !important;
+  }
+  .toc-item i {
+    font-size:45px !important;       /* BIGGER ICON */
+    margin-bottom:18px !important;
+  }
+
+  /* SECTIONS */
+  .section {
+    font-size:26px !important;
+    padding:34px !important;
+    border-radius:24px !important;
+  }
+
+  /* FORM ELEMENTS */
+  input, select, button {
+    font-size:24px !important;
+    padding:16px !important;
+    border-radius:16px !important;
+  }
+
+  .weather-box { font-size:22px !important; padding:18px !important; }
+  #searchBox { width:90% !important; font-size:24px !important; padding:18px !important; }
+
+  /* Accessibility buttons */
+  
+}
+
+  h1 { font-size:32px !important; }
+  h2 { font-size:30px !important; }
+
+  .util-grid { grid-template-columns:1fr !important; gap:28px !important; }
+  .toc-grid { grid-template-columns:1fr !important; gap:22px !important; }
+
+  .util-card {
+    font-size:24px !important;
+    padding:32px !important;
+    border-radius:22px !important;
+  }
+  .util-card button,
+  .util-card select {
+    font-size:24px !important;
+    padding:18px !important;
+    border-radius:16px !important;
+  }
+
+  .toc-item {
+    font-size:26px !important;
+    padding:32px !important;
+    border-radius:22px !important;
+  }
+  .toc-item i {
+    font-size:38px !important;
+    margin-bottom:14px !important;
+  }
+
+  .section {
+    font-size:26px !important;
+    padding:34px !important;
+    border-radius:24px !important;
+  }
+
+  input, select, button {
+    font-size:24px !important;
+    padding:16px !important;
+    border-radius:16px !important;
+  }
+
+  /* enlarge nearest station + weather boxes */
+  .weather-box {
+    font-size:22px !important;
+    padding:18px !important;
+  }
+
+  /* search box */
+  #searchBox {
+    width:90% !important;
+    font-size:24px !important;
+    padding:18px !important;
+  }
+
+  /* Accessibility buttons */
+  
+}
+  .toc-item { font-size:22px !important; padding:26px !important; border-radius:18px !important; }
+  .util-card { font-size:20px !important; padding:24px !important; border-radius:18px !important; }
+  .util-grid { grid-template-columns:1fr !important; }
+  .toc-grid { grid-template-columns:1fr !important; }
+  .section { font-size:21px !important; padding:28px !important; border-radius:20px !important; }
+  h2 { font-size:26px !important; }
+  h1 { font-size:28px !important; }
+  .toc-item i, .util-card h3 i { font-size:32px !important; }
+  button, select { font-size:20px !important; padding:14px !important; }
+}
+</style>
+
+
+<link rel="manifest" href="manifest.json">
+<script>
+window.addEventListener('load', () => {
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
+});
+</script>
+<script>
+
+
+function backToTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
+
+// بيانات محطات المترو الأساسية في إسطنبول (تقريبية)
+const STATIONS = [
+  { name:'Taksim', lines:'M2, F1', lat:41.0369, lon:28.9850 },
+  { name:'Kabataş', lines:'T1, F1, Ferries', lat:41.0341, lon:28.9946 },
+  { name:'Yenikapı', lines:'M1, M2, Marmaray', lat:41.0053, lon:28.9497 },
+  { name:'Levent', lines:'M2', lat:41.0811, lon:29.0110 },
+  { name:'Üsküdar', lines:'M5, Marmaray, Ferries', lat:41.0256, lon:29.0153 },
+  { name:'Haliç', lines:'M2', lat:41.0248, lon:28.9613 },
+  { name:'Mecidiyeköy', lines:'M2, M7', lat:41.0750, lon:28.9897 }
+];
+
+function haversine(lat1, lon1, lat2, lon2){
+  const toRad = d => d * Math.PI / 180;
+  const R = 6371; // km
+  const dLat = toRad(lat2-lat1);
+  const dLon = toRad(lon2-lon1);
+  const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}
+
+function findNearestStation(){
+  const box = document.getElementById('nearestStationResult');
+  if(!navigator.geolocation){ box.textContent = '❌ المتصفح لا يدعم تحديد الموقع.'; return; }
+  box.textContent = '⏳ جاري تحديد موقعك...';
+  navigator.geolocation.getCurrentPosition(pos => {
+    const { latitude, longitude } = pos.coords;
+    let best = null;
+    STATIONS.forEach(st => {
+      const d = haversine(latitude, longitude, st.lat, st.lon);
+      if(!best || d < best.d){ best = { ...st, d }; }
+    });
+    if(best){
+      box.textContent = `✅ أقرب محطة لك الآن: ${best.name} (حوالي ${best.d.toFixed(1)} كم) | الخطوط: ${best.lines}`;
+    } else {
+      box.textContent = 'لم يتم إيجاد محطات.';
+    }
+  }, err => {
+    box.textContent = '❌ تعذّر الحصول على موقعك. تأكد من السماح لتحديد الموقع.';
+  });
+}
+
+// الطقس المباشر لكل وجهة (يتطلب مفتاح OpenWeatherMap)
+const OPENWEATHER_KEY = 'YOUR_OPENWEATHER_API_KEY_HERE';
+const PLACES = {
+  vadi:{ name:'وادي إسطنبول', lat:41.1076, lon:28.9872 },
+  moi:{ name:'مول إسطنبول', lat:41.0620, lon:28.8106 },
+  kale:{ name:'Kale Outlet', lat:41.0185, lon:28.8720 },
+  akasya:{ name:'Akasya Mall', lat:41.0006, lon:29.0364 },
+  forum:{ name:'Forum İstanbul', lat:41.0481, lon:28.8965 },
+  vialand:{ name:'Vialand', lat:41.1071, lon:28.9275 },
+  balat:{ name:'حي بلاط', lat:41.0295, lon:28.9496 },
+  nisantasi:{ name:'نيشان تاشي', lat:41.0442, lon:28.9904 },
+  emirgan:{ name:'أميرجان', lat:41.1098, lon:29.0554 },
+  pierloti:{ name:'بيير لوتي', lat:41.0578, lon:28.9366 },
+  bebek:{ name:'ببك', lat:41.0841, lon:29.0434 },
+  tema:{ name:'Tema World', lat:41.0593, lon:28.7946 },
+  ozdilek:{ name:'ÖzdilekPark', lat:41.0813, lon:29.0116 },
+  besiktas:{ name:'بيشكتاش', lat:41.0430, lon:29.0025 },
+  uskudar:{ name:'أوسكودار', lat:41.0256, lon:29.0153 }
+};
+
+function getWeatherForSelected(){
+  const sel = document.getElementById('weatherPlace');
+  const key = sel.value;
+  const box = document.getElementById('weatherResult');
+  if(!key){ box.textContent = 'اختر وجهة أولاً.'; return; }
+  if(!OPENWEATHER_KEY || OPENWEATHER_KEY === 'YOUR_OPENWEATHER_API_KEY_HERE'){
+    box.textContent = '⚠️ أضف مفتاح OpenWeatherMap في الكود أولاً.';
+    return;
+  }
+  const p = PLACES[key];
+  box.textContent = '⏳ يجري جلب حالة الطقس...';
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${p.lat}&lon=${p.lon}&units=metric&lang=ar&appid=${OPENWEATHER_KEY}`;
+  fetch(url)
+    .then(r => r.json())
+    .then(data => {
+      if(data.cod !== 200){ box.textContent = 'تعذّر جلب حالة الطقس.'; return; }
+      const t = Math.round(data.main.temp);
+      const desc = data.weather[0].description;
+      const hum = data.main.humidity;
+      let advice = '';
+      if(t >= 18 && t <= 26 && !/مطر|عاصف/.test(desc)) advice = 'الوقت مثالي للتنزه والمشي.';
+      else if(t < 10) advice = 'يفضل ارتداء ملابس دافئة جداً.';
+      else if(/مطر/.test(desc)) advice = 'يفضل حمل مظلة أو اختيار مكان مغلق (مول).';
+      else advice = 'الطقس جيد لكن خذ احتياطاتك حسب راحتك.';
+      box.innerHTML = `🌤 <b>${p.name}</b><br>الحرارة: ${t}°C<br>الوصف: ${desc}<br>الرطوبة: ${hum}%<br>🕒 نصيحة: ${advice}`;
+    })
+    .catch(() => { box.textContent = 'خطأ في الاتصال بخدمة الطقس.'; });
+}
+</script>
+<style>
+/* MOBILE PREVIEW TOGGLE */
+
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+
+
+<!-- Accessibility Tools -->
+
+
+<h1>✨ دليل رحلات إسطنبول – خطة المواصلات الكاملة ✨</h1>
+
+<!-- TABLE OF CONTENT -->
+<h2><i class="fa-solid fa-list"></i> جدول المحتوى</h2>
+
+<!-- Search Box -->
+<div style="margin:20px 0; text-align:center;">
+  <input id="searchBox" type="text" placeholder="ابحث عن مكان..." style="width:80%; padding:12px; border-radius:10px; border:1px solid #bbb; font-size:16px; text-align:right;">
+</div>
+<script>
+  document.getElementById('searchBox').addEventListener('input', function(){
+    const val = this.value.trim();
+    document.querySelectorAll('.section').forEach(sec => {
+      sec.style.display = sec.textContent.includes(val) ? 'block' : 'none';
+    });
+  });
+</script>
+<div class="util-grid">
+  <div class="util-card">
+    <h3><i class="fa-solid fa-location-crosshairs"></i> أقرب محطة مترو</h3>
+    <p>باستخدام موقعك الحالي، نحدد لك أقرب محطة مترو رئيسية في إسطنبول لتبدأ منها رحلتك.</p>
+    <button onclick="findNearestStation()">تحديد أقرب محطة</button>
+    <div id="nearestStationResult" class="weather-box">لم يتم التحديد بعد.</div>
+  </div>
+  <div class="util-card">
+    <h3><i class="fa-solid fa-cloud-sun"></i> الطقس حسب الوجهة</h3>
+    <p>اختر المكان الذي تريد زيارته لتحصل على حالة الطقس الحالية ونصيحة لأفضل وقت للزيارة.</p>
+    <select id="weatherPlace">
+      <option value="">اختر وجهة...</option>
+      <option value="vadi">وادي إسطنبول</option>
+      <option value="moi">مول إسطنبول</option>
+      <option value="kale">Kale Outlet</option>
+      <option value="akasya">Akasya Mall</option>
+      <option value="forum">Forum İstanbul</option>
+      <option value="vialand">Vialand</option>
+      <option value="balat">حي بلاط</option>
+      <option value="nisantasi">نيشان تاشي</option>
+      <option value="emirgan">أميرجان</option>
+      <option value="pierloti">بيير لوتي</option>
+      <option value="bebek">ببك</option>
+      <option value="tema">Tema World</option>
+      <option value="ozdilek">ÖzdilekPark</option>
+      <option value="besiktas">بيشكتاش</option>
+      <option value="uskudar">أوسكودار</option>
+    </select>
+    <button onclick="getWeatherForSelected()">عرض حالة الطقس</button>
+    <div id="weatherResult" class="weather-box">لم يتم اختيار وجهة بعد.</div>
+  </div>
+</div>
+
+<div class="toc-grid">
+ <a class="toc-item" href="#vadi"><i class="fa-solid fa-bag-shopping"></i> وادي إسطنبول</a>
+ <a class="toc-item" href="#moi"><i class="fa-solid fa-bag-shopping"></i> مول إسطنبول</a>
+ <a class="toc-item" href="#kale"><i class="fa-solid fa-store"></i> Kale Outlet</a>
+ <a class="toc-item" href="#akasya"><i class="fa-solid fa-shop"></i> Akasya Mall</a>
+ <a class="toc-item" href="#forum"><i class="fa-solid fa-shop"></i> Forum İstanbul</a>
+ <a class="toc-item" href="#vialand"><i class="fa-solid fa-roller-coaster"></i> Vialand</a>
+ <a class="toc-item" href="#balat"><i class="fa-solid fa-city"></i> حي بلاط</a>
+ <a class="toc-item" href="#nisantasi"><i class="fa-solid fa-building"></i> نيشان تاشي</a>
+ <a class="toc-item" href="#emirgan"><i class="fa-solid fa-tree"></i> أميرجان</a>
+ <a class="toc-item" href="#pierloti"><i class="fa-solid fa-cable-car"></i> بيير لوتي</a>
+ <a class="toc-item" href="#bebek"><i class="fa-solid fa-water"></i> ببك</a>
+ <a class="toc-item" href="#tema"><i class="fa-solid fa-building-circle-check"></i> Tema World</a>
+ <a class="toc-item" href="#ozdilek"><i class="fa-solid fa-building"></i> ÖzdilekPark</a>
+ <a class="toc-item" href="#besiktas"><i class="fa-solid fa-ship"></i> بيشكتاش</a>
+ <a class="toc-item" href="#uskudar"><i class="fa-solid fa-ferry"></i> أوسكودار</a>
+  <a class="toc-item" href="#marmara"><i class="fa-solid fa-shop"></i> Marmara Forum</a>
+</div>
+<!-- SECTIONS BELOW (kept same content but visually improved) -->
+
+<div class="section" id="vadi">
+<h2><i class="fa-solid fa-bag-shopping"></i> مول وادي إسطنبول</h2>
+<p><b>شرح مفصل:</b><br>من محطة تقسيم تبدأ رحلتك بالنزول إلى خط M2 السريع، ثم الوصول إلى Sanayi Mahallesi حيث تجد الفينيكولار F3 الذي ينقلك مباشرة إلى مدخل المول دون أي مشي إضافي. الرحلة سريعة ومريحة جداً.</p>
+<p><b>خطوات الطريق:</b><br>1. ركوب مترو M2 من Taksim باتجاه Hacıosman<br>2. النزول في Sanayi Mahallesi<br>3. ركوب F3 مباشرة نحو Vadistanbul<br>4. الوصول مباشرة إلى باب المول</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. من داخل المول اتبع لوحات F3<br>2. خذ الفينيكولار F3 عائداً إلى Sanayi Mahallesi<br>3. خذ M2 نحو Yenikapı<br>4. النزول في Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=vadi+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+
+<!-- info row like screenshot -->
+<p><span>⏱️ <b>المدة:</b> 20–25 دقيقة</span><br>
+<span>💰 <b>الكلفة:</b> 20 ₺</span><br>
+<span>🚇 <b>الخط المستخدم:</b> M2 + F3</span><br>
+<span>📍 <b>الوصول:</b> محطة Vadistanbul ملاصقة للمول</span></p>
+</div>
+</div>
+</div>
+
+<div class="section" id="moi">
+<h2><i class="fa-solid fa-bag-shopping"></i> مول إسطنبول</h2>
+<p>
+<b>شرح مفصل:</b><br>
+هذه الرحلة تعتبر من أكثر الرحلات سلاسة رغم أنها تشمل 3 خطوط. تبدأ من M2 إلى Yenikapı، حيث يتوفر التحويل المباشر إلى Marmaray. بعد نزولك في Ataköy، ستجد خط M9 الحديث الذي يأخذك مباشرة إلى Masko، المحطة التي تقع على باب المول تماماً.
+</p>
+<p>
+<b>خطوات الطريق:</b><br>
+1. مترو M2 من Taksim إلى Yenikapı<br>
+2. ركوب Marmaray باتجاه Halkalı والنزول في Ataköy<br>
+3. ركوب M9 إلى Masko — باب المول مباشرة
+</p>
+<div class="return">
+<b>رحلة العودة (مفصلة):</b><br>
+1. من Masko خذ M9 باتجاه Ataköy<br>
+2. التحويل إلى Marmaray باتجاه Gebze والنزول في Yenikapı<br>
+3. ركوب M2 نحو Hacıosman والنزول في Taksim
+
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=moi+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+</div>
+</div>
+
+<div class="section" id="kale">
+<h2><i class="fa-solid fa-store"></i> Kale Outlet</h2>
+<p>
+<b>شرح مفصل:</b><br>
+تبدأ رحلتك بفينيكولار F1 الذي ينقلك من تقسيم إلى Kabataş خلال أقل من دقيقتين. هناك تربط مباشرة مع ترام T1 الذي يأخذك إلى Güngören، وهي محطة قريبة جداً من المول، ومن ثم تمشي فقط حوالي 8 دقائق للوصول.
+</p>
+<p>
+<b>خطوات الطريق:</b><br>
+1. F1 من Taksim إلى Kabataş<br>
+2. T1 باتجاه Bağcılar والنزول في Güngören<br>
+3. مشي قصير نحو المول
+</p>
+<div class="return">
+<b>رحلة العودة (مفصلة):</b><br>
+1. الرجوع إلى محطة Güngören<br>
+2. ركوب T1 باتجاه Kabataş والنزول هناك<br>
+3. ركوب F1 للعودة إلى Taksim
+
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=kale+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+</div>
+</div>
+
+<div class="section" id="akasya">
+<h2><i class="fa-solid fa-shop"></i> Akasya Mall</h2>
+<p>
+<b>شرح مفصل:</b><br>
+من تقسيم إلى Yenikapı عبر M2، ثم تأخذ Marmaray إلى Üsküdar وهو أسرع الطرق نحو آسيا. بعدها مباشرة ركوب M5 وزيارة محطة Ünalan التي تمتلك مخرجاً مباشراً إلى داخل مجمع أكاسيا.
+</p>
+<p>
+<b>خطوات الطريق:</b><br>
+1. M2 → Yenikapı<br>
+2. Marmaray → Üsküdar<br>
+3. M5 → Ünalan (مخرج مباشر للمول)
+</p>
+<div class="return">
+<b>رحلة العودة (مفصلة):</b><br>
+1. من داخل المول اتجه مباشرة نحو محطة Ünalan<br>
+2. خذ M5 باتجاه Üsküdar<br>
+3. خذ Marmaray نحو Yenikapı<br>
+4. خذ M2 إلى Taksim
+
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=akasya+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+</div>
+</div>
+
+<div class="section" id="forum">
+<h2><i class="fa-solid fa-shop"></i> Forum İstanbul</h2>
+<p>
+<b>شرح مفصل:</b><br>
+رحلة مباشرة جداً عبر M2 إلى Yenikapı ثم التحويل إلى M1B الذي يوصلك إلى Kocatepe وهي محطة ملاصقة للمول ولـ IKEA مباشرة.
+</p>
+<p>
+<b>خطوات الطريق:</b><br>
+1. M2 → Yenikapı<br>
+2. M1B → Kocatepe (باب المول مباشرة)
+</p>
+<div class="return">
+<b>رحلة العودة (مفصلة):</b><br>
+1. من Kocatepe خذ M1B باتجاه Yenikapı<br>
+2. التحويل إلى M2 نحو Taksim
+
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=forum+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+</div>
+</div>
+
+<div class="section" id="vialand">
+<h2><i class="fa-solid fa-roller-coaster"></i> Vialand (Isfanbul)</h2>
+<p><b>شرح مفصل:</b><br>رحلة ترفيهية ممتعة تبدأ من تقسيم إلى Mecidiyeköy عبر M2، ثم التحويل إلى خط M7 الحديث الذي يوصلك إلى Veysel Karani. من هناك تمشي حوالي 10 دقائق للوصول لمدينة الألعاب والمول.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → Mecidiyeköy<br>2. M7 → Veysel Karani<br>3. 10 دقائق مشي للوصول</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. الرجوع إلى Veysel Karani<br>2. ركوب M7 نحو Mecidiyeköy<br>3. ركوب M2 نحو Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=vialand+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 35–40 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M7<br>📍 <b>الوصول:</b> Veysel Karani</p>
+</div>
+
+<div class="section" id="balat">
+<h2><i class="fa-solid fa-city"></i> حي بلاط</h2>
+<p><b>شرح مفصل:</b><br>أحد أجمل الأحياء التاريخية في إسطنبول. تبدأ رحلتك من M2 إلى Haliç ثم تمشي إلى Cibali، بعدها تأخذ ترام T5 إلى Balat.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → Haliç<br>2. مشي إلى محطة Cibali<br>3. T5 → Balat</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. من Balat خذ T5 نحو Cibali<br>2. امشِ إلى محطة Haliç<br>3. خذ M2 نحو Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=balat+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 15 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + T5<br>📍 <b>الوصول:</b> Balat</p>
+</div>
+
+<div class="section" id="nisantasi">
+<h2><i class="fa-solid fa-building"></i> نيشان تاشي</h2>
+<p><b>شرح مفصل:</b><br>منطقة راقية مليئة بالمقاهي والماركات الفاخرة. الوصول مباشر تقريباً عبر محطة Osmanbey.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → Osmanbey<br>2. مشي 5 دقائق نحو قلب نيشان تاشي</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>العودة بنفس الطريق: المشي إلى Osmanbey → M2 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=nisantasi+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 5–7 دقائق<br>💰 <b>الكلفة:</b> 10 ₺<br>🚇 <b>الخط المستخدم:</b> M2<br>📍 <b>الوصول:</b> Osmanbey</p>
+</div>
+
+<div class="section" id="emirgan">
+<h2><i class="fa-solid fa-tree"></i> حديقة أميرجان</h2>
+<p><b>شرح مفصل:</b><br>إحدى أجمل الحدائق المطلة على البوسفور. تتوجه عبر M2 ثم باص مباشر إلى İstinye Bayırı قرب المدخل.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → ITÜ–Ayazağa<br>2. باص 29Ş أو 40B أو 42T → İstinye Bayırı<br>3. وصول مباشر للمدخل</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. العودة بالباص إلى ITÜ–Ayazağa<br>2. M2 إلى Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=emirgan+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 35–40 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Bus<br>📍 <b>الوصول:</b> İstinye Bayırı</p>
+</div>
+
+<div class="section" id="pierloti">
+<h2><i class="fa-solid fa-cable-car"></i> تلة بيير لوتي</h2>
+<p><b>شرح مفصل:</b><br>رحلة بانورامية مميزة عبر T5 ثم التلفريك إلى قمة التلة.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → Haliç<br>2. T5 → Eyüpsultan Teleferik<br>3. التلفريك إلى القمة</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>التلفريك → T5 → Haliç → M2 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=pierloti+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + T5 + Teleferik<br>📍 <b>الوصول:</b> Eyüpsultan</p>
+</div>
+
+<div class="section" id="bebek">
+<h2><i class="fa-solid fa-water"></i> ببك</h2>
+<p><b>شرح مفصل:</b><br>من أجمل مناطق البوسفور. الوصول عبر M2 ثم M6 ثم F4 إلى Aşiyan.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → Levent<br>2. M6 → Boğaziçi Üniversitesi<br>3. F4 → Aşiyan<br>4. مشي 5 دقائق</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>Aşiyan → F4 → Boğaziçi → M6 → Levent → M2 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=bebek+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M6 + F4<br>📍 <b>الوصول:</b> Aşiyan</p>
+</div>
+
+<div class="section" id="tema">
+<h2><i class="fa-solid fa-building-circle-check"></i> Tema World Mall</h2>
+<p><b>شرح مفصل:</b><br>رحلة سلسة عبر 3 خطوط: M2 → M1B → M9.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → Yenikapı<br>2. M1B → Kirazlı<br>3. M9 → Atakent<br>4. مشي 5 دقائق</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>Atakent → M9 → Kirazlı → M1B → Yenikapı → M2 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=tema+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 50–55 دقيقة<br>💰 <b>الكلفة:</b> 25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M1B + M9<br>📍 <b>الوصول:</b> Atakent</p>
+</div>
+
+<div class="section" id="ozdilek">
+<h2><i class="fa-solid fa-building"></i> ÖzdilekPark</h2>
+<p><b>شرح مفصل:</b><br>رحلة بسيطة ومباشرة عبر محطة Levent.</p>
+<p><b>خطوات الطريق:</b><br>1. M2 → Levent<br>2. مخرج ÖzdilekPark مباشرة</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>Levent → M2 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=ozdilek+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 10–12 دقيقة<br>💰 <b>الكلفة:</b> 15 ₺<br>🚇 <b>الخط المستخدم:</b> M2<br>📍 <b>الوصول:</b> Levent</p>
+</div>
+
+<div class="section" id="besiktas">
+<h2><i class="fa-solid fa-ship"></i> بيشكتاش</h2>
+<p><b>شرح مفصل:</b><br>منطقة ساحلية نابضة بالحياة، مليئة بالمقاهي، والأسواق، والمطاعم المطلة على البحر. الطريق من تقسيم سهل جداً ويجمع بين الفينيكولار والمشي على كورنيش رائع.</p>
+<p><b>خطوات الطريق:</b><br>1. ركوب F1 من Taksim إلى Kabataş<br>2. المشي 10–12 دقيقة شمالاً بمحاذاة البحر حتى Beşiktaş Square</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. العودة مشياً من ساحة بيشكتاش حتى محطة Kabataş<br>2. ركوب F1 عائداً إلى Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=besiktas+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 20–25 دقيقة<br>💰 <b>الكلفة:</b> 15 ₺<br>🚇 <b>الخط المستخدم:</b> F1<br>📍 <b>الوصول:</b> Beşiktaş Square</p>
+</div><div class="section" id="uskudar">
+<h2><i class="fa-solid fa-ferry"></i> أوسكودار</h2>
+<p><b>شرح مفصل:</b><br>من أجمل مناطق الطرف الآسيوي في إسطنبول. تتميز بالكورنيش الطويل، الإطلالة على برج الفتاة، والمقاهي الهادئة على البحر. الوصول إليها ممتع جداً باستخدام الفينيكولار ثم العبّارة البحرية.</p>
+<p><b>خطوات الطريق:</b><br>1. ركوب F1 من Taksim إلى Kabataş<br>2. ركوب العبّارة المباشرة من Kabataş إلى Üsküdar<br>3. الوصول مباشرة إلى كورنيش أوسكودار</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. من رصيف Üsküdar خذ العبّارة إلى Kabataş<br>2. بعد الوصول إلى Kabataş خذ F1 نحو Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=uskudar+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> F1 + العبّارة<br>📍 <b>الوصول:</b> Üsküdar Pier</p>
+</div>
+<div class="section" id="marmara">
+<h2><i class="fa-solid fa-shop"></i> Marmara Forum</h2>
+<p><b>شرح مفصل:</b><br>من تقسيم تبدأ رحلتك عبر مترو M2 إلى Yenikapı حيث يتوفر تحويل مباشر وواضح. بعدها تنتقل إلى خط M1B باتجاه Kirazlı وتنزل في محطة Zeytinburnu. المول قريب جداً من المحطة ويمكن الوصول إليه عبر مشي مريح لمدة 6 دقائق فقط.</p>
+<p><b>خطوات الطريق:</b><br>
+1. M2 → Yenikapı<br>
+2. التحويل إلى M1B باتجاه Kirazlı<br>
+3. النزول في Zeytinburnu<br>
+4. مشي 6 دقائق إلى المول</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>
+1. من باب المول اتجه نحو محطة Zeytinburnu<br>
+2. خذ M1B باتجاه Yenikapı<br>
+3. التحويل إلى M2 نحو Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Marmara+Forum+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 22–28 دقيقة<br>💰 <b>الكلفة:</b> 15–20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M1B<br>📍 <b>الوصول:</b> Zeytinburnu</p>
+</div>
+<button class="back-top" onclick="backToTop()" title="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+</body>
+</html>
