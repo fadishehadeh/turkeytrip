@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
@@ -228,54 +228,6 @@ function findNearestStation(){
   });
 }
 
-// الطقس المباشر لكل وجهة (يتطلب مفتاح OpenWeatherMap)
-const OPENWEATHER_KEY = 'YOUR_OPENWEATHER_API_KEY_HERE';
-const PLACES = {
-  vadi:{ name:'وادي إسطنبول', lat:41.1076, lon:28.9872 },
-  moi:{ name:'مول إسطنبول', lat:41.0620, lon:28.8106 },
-  kale:{ name:'Kale Outlet', lat:41.0185, lon:28.8720 },
-  akasya:{ name:'Akasya Mall', lat:41.0006, lon:29.0364 },
-  forum:{ name:'Forum İstanbul', lat:41.0481, lon:28.8965 },
-  vialand:{ name:'Vialand', lat:41.1071, lon:28.9275 },
-  balat:{ name:'حي بلاط', lat:41.0295, lon:28.9496 },
-  nisantasi:{ name:'نيشان تاشي', lat:41.0442, lon:28.9904 },
-  emirgan:{ name:'أميرجان', lat:41.1098, lon:29.0554 },
-  pierloti:{ name:'بيير لوتي', lat:41.0578, lon:28.9366 },
-  bebek:{ name:'ببك', lat:41.0841, lon:29.0434 },
-  tema:{ name:'Tema World', lat:41.0593, lon:28.7946 },
-  ozdilek:{ name:'ÖzdilekPark', lat:41.0813, lon:29.0116 },
-  besiktas:{ name:'بيشكتاش', lat:41.0430, lon:29.0025 },
-  uskudar:{ name:'أوسكودار', lat:41.0256, lon:29.0153 }
-};
-
-function getWeatherForSelected(){
-  const sel = document.getElementById('weatherPlace');
-  const key = sel.value;
-  const box = document.getElementById('weatherResult');
-  if(!key){ box.textContent = 'اختر وجهة أولاً.'; return; }
-  if(!OPENWEATHER_KEY || OPENWEATHER_KEY === 'YOUR_OPENWEATHER_API_KEY_HERE'){
-    box.textContent = '⚠️ أضف مفتاح OpenWeatherMap في الكود أولاً.';
-    return;
-  }
-  const p = PLACES[key];
-  box.textContent = '⏳ يجري جلب حالة الطقس...';
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${p.lat}&lon=${p.lon}&units=metric&lang=ar&appid=${OPENWEATHER_KEY}`;
-  fetch(url)
-    .then(r => r.json())
-    .then(data => {
-      if(data.cod !== 200){ box.textContent = 'تعذّر جلب حالة الطقس.'; return; }
-      const t = Math.round(data.main.temp);
-      const desc = data.weather[0].description;
-      const hum = data.main.humidity;
-      let advice = '';
-      if(t >= 18 && t <= 26 && !/مطر|عاصف/.test(desc)) advice = 'الوقت مثالي للتنزه والمشي.';
-      else if(t < 10) advice = 'يفضل ارتداء ملابس دافئة جداً.';
-      else if(/مطر/.test(desc)) advice = 'يفضل حمل مظلة أو اختيار مكان مغلق (مول).';
-      else advice = 'الطقس جيد لكن خذ احتياطاتك حسب راحتك.';
-      box.innerHTML = `🌤 <b>${p.name}</b><br>الحرارة: ${t}°C<br>الوصف: ${desc}<br>الرطوبة: ${hum}%<br>🕒 نصيحة: ${advice}`;
-    })
-    .catch(() => { box.textContent = 'خطأ في الاتصال بخدمة الطقس.'; });
-}
 </script>
 <style>
 /* MOBILE PREVIEW TOGGLE */
@@ -315,30 +267,6 @@ function getWeatherForSelected(){
     <p>باستخدام موقعك الحالي، نحدد لك أقرب محطة مترو رئيسية في إسطنبول لتبدأ منها رحلتك.</p>
     <button onclick="findNearestStation()">تحديد أقرب محطة</button>
     <div id="nearestStationResult" class="weather-box">لم يتم التحديد بعد.</div>
-  </div>
-  <div class="util-card">
-    <h3><i class="fa-solid fa-cloud-sun"></i> الطقس حسب الوجهة</h3>
-    <p>اختر المكان الذي تريد زيارته لتحصل على حالة الطقس الحالية ونصيحة لأفضل وقت للزيارة.</p>
-    <select id="weatherPlace">
-      <option value="">اختر وجهة...</option>
-      <option value="vadi">وادي إسطنبول</option>
-      <option value="moi">مول إسطنبول</option>
-      <option value="kale">Kale Outlet</option>
-      <option value="akasya">Akasya Mall</option>
-      <option value="forum">Forum İstanbul</option>
-      <option value="vialand">Vialand</option>
-      <option value="balat">حي بلاط</option>
-      <option value="nisantasi">نيشان تاشي</option>
-      <option value="emirgan">أميرجان</option>
-      <option value="pierloti">بيير لوتي</option>
-      <option value="bebek">ببك</option>
-      <option value="tema">Tema World</option>
-      <option value="ozdilek">ÖzdilekPark</option>
-      <option value="besiktas">بيشكتاش</option>
-      <option value="uskudar">أوسكودار</option>
-    </select>
-    <button onclick="getWeatherForSelected()">عرض حالة الطقس</button>
-    <div id="weatherResult" class="weather-box">لم يتم اختيار وجهة بعد.</div>
   </div>
 </div>
 
