@@ -228,6 +228,54 @@ function findNearestStation(){
   });
 }
 
+// الطقس المباشر لكل وجهة (يتطلب مفتاح OpenWeatherMap)
+const OPENWEATHER_KEY = 'YOUR_OPENWEATHER_API_KEY_HERE';
+const PLACES = {
+  vadi:{ name:'وادي إسطنبول', lat:41.1076, lon:28.9872 },
+  moi:{ name:'مول إسطنبول', lat:41.0620, lon:28.8106 },
+  kale:{ name:'Kale Outlet', lat:41.0185, lon:28.8720 },
+  akasya:{ name:'Akasya Mall', lat:41.0006, lon:29.0364 },
+  forum:{ name:'Forum İstanbul', lat:41.0481, lon:28.8965 },
+  vialand:{ name:'Vialand', lat:41.1071, lon:28.9275 },
+  balat:{ name:'حي بلاط', lat:41.0295, lon:28.9496 },
+  nisantasi:{ name:'نيشان تاشي', lat:41.0442, lon:28.9904 },
+  emirgan:{ name:'أميرجان', lat:41.1098, lon:29.0554 },
+  pierloti:{ name:'بيير لوتي', lat:41.0578, lon:28.9366 },
+  bebek:{ name:'ببك', lat:41.0841, lon:29.0434 },
+  tema:{ name:'Tema World', lat:41.0593, lon:28.7946 },
+  ozdilek:{ name:'ÖzdilekPark', lat:41.0813, lon:29.0116 },
+  besiktas:{ name:'بيشكتاش', lat:41.0430, lon:29.0025 },
+  uskudar:{ name:'أوسكودار', lat:41.0256, lon:29.0153 }
+};
+
+function getWeatherForSelected(){
+  const sel = document.getElementById('weatherPlace');
+  const key = sel.value;
+  const box = document.getElementById('weatherResult');
+  if(!key){ box.textContent = 'اختر وجهة أولاً.'; return; }
+  if(!OPENWEATHER_KEY || OPENWEATHER_KEY === 'YOUR_OPENWEATHER_API_KEY_HERE'){
+    box.textContent = '⚠️ أضف مفتاح OpenWeatherMap في الكود أولاً.';
+    return;
+  }
+  const p = PLACES[key];
+  box.textContent = '⏳ يجري جلب حالة الطقس...';
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${p.lat}&lon=${p.lon}&units=metric&lang=ar&appid=${OPENWEATHER_KEY}`;
+  fetch(url)
+    .then(r => r.json())
+    .then(data => {
+      if(data.cod !== 200){ box.textContent = 'تعذّر جلب حالة الطقس.'; return; }
+      const t = Math.round(data.main.temp);
+      const desc = data.weather[0].description;
+      const hum = data.main.humidity;
+      let advice = '';
+      if(t >= 18 && t <= 26 && !/مطر|عاصف/.test(desc)) advice = 'الوقت مثالي للتنزه والمشي.';
+      else if(t < 10) advice = 'يفضل ارتداء ملابس دافئة جداً.';
+      else if(/مطر/.test(desc)) advice = 'يفضل حمل مظلة أو اختيار مكان مغلق (مول).';
+      else advice = 'الطقس جيد لكن خذ احتياطاتك حسب راحتك.';
+      box.innerHTML = `🌤 <b>${p.name}</b><br>الحرارة: ${t}°C<br>الوصف: ${desc}<br>الرطوبة: ${hum}%<br>🕒 نصيحة: ${advice}`;
+    })
+    .catch(() => { box.textContent = 'خطأ في الاتصال بخدمة الطقس.'; });
+}
 </script>
 <style>
 /* MOBILE PREVIEW TOGGLE */
@@ -261,16 +309,38 @@ function findNearestStation(){
     });
   });
 </script>
-<div class="util-grid">
+
+  </div>
   <div class="util-card">
-    <h3><i class="fa-solid fa-location-crosshairs"></i> أقرب محطة مترو</h3>
-    <p>باستخدام موقعك الحالي، نحدد لك أقرب محطة مترو رئيسية في إسطنبول لتبدأ منها رحلتك.</p>
-    <button onclick="findNearestStation()">تحديد أقرب محطة</button>
-    <div id="nearestStationResult" class="weather-box">لم يتم التحديد بعد.</div>
+    <h3><i class="fa-solid fa-cloud-sun"></i> الطقس حسب الوجهة</h3>
+    <p>اختر المكان الذي تريد زيارته لتحصل على حالة الطقس الحالية ونصيحة لأفضل وقت للزيارة.</p>
+    <select id="weatherPlace">
+      <option value="">اختر وجهة...</option>
+      <option value="vadi">وادي إسطنبول</option>
+      <option value="moi">مول إسطنبول</option>
+      <option value="kale">Kale Outlet</option>
+      <option value="akasya">Akasya Mall</option>
+      <option value="forum">Forum İstanbul</option>
+      <option value="vialand">Vialand</option>
+      <option value="balat">حي بلاط</option>
+      <option value="nisantasi">نيشان تاشي</option>
+      <option value="emirgan">أميرجان</option>
+      <option value="pierloti">بيير لوتي</option>
+      <option value="bebek">ببك</option>
+      <option value="tema">Tema World</option>
+      <option value="ozdilek">ÖzdilekPark</option>
+      <option value="besiktas">بيشكتاش</option>
+      <option value="uskudar">أوسكودار</option>
+    </select>
+    <button onclick="getWeatherForSelected()">عرض حالة الطقس</button>
+    <div id="weatherResult" class="weather-box">لم يتم اختيار وجهة بعد.</div>
   </div>
 </div>
 
 <div class="toc-grid">
+ <a class="toc-item" href="#beylerbeyi"><i class="fa-solid fa-landmark"></i> قصر بيلار بيه</a>
+ <a class="toc-item" href="#kucuksu"><i class="fa-solid fa-landmark-dome"></i> كوتشوك سو</a>
+ <a class="toc-item" href="#nakka"><i class="fa-solid fa-mountain-sun"></i> نكّاش تبه</a>
  <a class="toc-item" href="#vadi"><i class="fa-solid fa-bag-shopping"></i> وادي إسطنبول</a>
  <a class="toc-item" href="#moi"><i class="fa-solid fa-bag-shopping"></i> مول إسطنبول</a>
  <a class="toc-item" href="#kale"><i class="fa-solid fa-store"></i> Kale Outlet</a>
@@ -511,6 +581,61 @@ function findNearestStation(){
 </div>
 <p>⏱️ <b>المدة:</b> 22–28 دقيقة<br>💰 <b>الكلفة:</b> 15–20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M1B<br>📍 <b>الوصول:</b> Zeytinburnu</p>
 </div>
-<button class="back-top" onclick="backToTop()" title="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+
+ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Metrobüs<br>📍 <b>الوصول:</b> 15 Temmuz Şehitler Köprüsü</p>
+</div>
+
+<!-- NEW LOCATIONS START -->
+
+<div class="section" id="beylerbeyi">
+<h2><i class="fa-solid fa-landmark"></i> قصر بيلار بيه – Beylerbeyi Sarayı</h2>
+<p><b>شرح مفصل:</b><br>يقع القصر على ضفاف البوسفور في الجانب الآسيوي، ويمكن الوصول إليه بسهولة عبر الفينيكولار F1 ثم العبّارة إلى أوسكودار، تليها نزهة قصيرة على الكورنيش.</p>
+<p><b>خطوات الطريق:</b><br>
+1. F1 → Kabataş<br>
+2. العبّارة إلى Üsküdar<br>
+3. مشي 10 دقائق بمحاذاة البحر إلى القصر
+</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>
+Üsküdar → العبّارة → Kabataş → F1 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Beylerbeyi+Sarayi" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 20–25 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> F1 + Ferry<br>📍 <b>الوصول:</b> Üsküdar</p>
+</div>
+
+<div class="section" id="kucuksu">
+<h2><i class="fa-solid fa-landmark-dome"></i> قصر كوتشوك سو – Küçüksu Kasrı</h2>
+<p><b>شرح مفصل:</b><br>من أجمل القصور على البحر. يمكن الوصول إليه عبر عبّارة من Kabataş إلى Beykoz ثم مشي قصير.</p>
+<p><b>خطوات الطريق:</b><br>
+1. F1 → Kabataş<br>
+2. العبّارة إلى Beykoz<br>
+3. مشي 12–15 دقيقة إلى القصر
+</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>
+Beykoz → العبّارة → Kabataş → F1 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=K%C3%BC%C3%A7%C3%BCksu+Kasr%C4%B1" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 35–40 دقيقة<br>💰 <b>الكلفة:</b> 25–30 ₺<br>🚇 <b>الخط المستخدم:</b> F1 + Ferry<br>📍 <b>الوصول:</b> Beykoz</p>
+</div>
+
+<div class="section" id="nakka">
+<h2><i class="fa-solid fa-mountain-sun"></i> Nakkaştepe Millet Bahçesi</h2>
+<p><b>شرح مفصل:</b><br>منتزه بإطلالة خرافية على جسر البوسفور. أسهل طريق بدون باصات: M2 ثم متروبوس فقط.</p>
+<p><b>خطوات الطريق:</b><br>
+1. M2 من Taksim → Şişli–Mecidiyeköy<br>
+2. ممر داخلي إلى Mecidiyeköy Metrobüs<br>
+3. المتروبوس باتجاه Söğütlüçeşme<br>
+4. النزول في 15 Temmuz Şehitler Köprüsü<br>
+5. مشي 12–14 دقيقة نحو مدخل المنتزه
+</p>
+<div class="return"><b>رحلة العودة (مفصلة):</b><br>
+المسار نفسه: 15 Temmuz → Metrobüs → Mecidiyeköy → M2 → Taksim
+<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Nakka%C5%9Ftepe+Millet+Bah%C3%A7esi" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
+</div>
+<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Metrobüs<br>📍 <b>الوصول:</b> 15 Temmuz Şehitler Köprüsü</p>
+</div>
+
+<!-- NEW LOCATIONS END -->
+
+<button class="back-top""" onclick="backToTop()" title="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
 </body>
 </html>
