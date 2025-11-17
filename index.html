@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>دليل رحلات إسطنبول</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
@@ -15,10 +16,11 @@
  
 
  /* TOC grid */
- .toc-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-top:20px; }
- .toc-item { background:white; padding:18px; border-radius:12px; text-align:center; font-size:18px; font-weight:bold; color:#1a237e; box-shadow:0 3px 8px rgba(0,0,0,0.1); transition:0.3s; }
+ .toc-grid { display:grid !important; grid-template-columns: repeat(2, 1fr) !important; gap:12px; margin-top:20px; }
+ .toc-item { background:white; padding:18px; border-radius:12px; text-align:center; font-size:22px; font-weight:bold; color:#1a237e; box-shadow:0 3px 8px rgba(0,0,0,0.1); transition:0.3s; }
  .toc-item:hover { transform:translateY(-5px); background:#e3f2fd; }
- .toc-item i { font-size:26px; display:block; margin-bottom:10px; color:#c62828; }
+ .toc-item i { font-size:36px; display:block; margin-bottom:10px; color:#c62828; }
+ .toc-category { grid-column: 1 / -1; background:#b71c1c; color:white; padding:14px; border-radius:10px; text-align:center; font-size:24px; font-weight:bold; margin-top:15px; box-shadow:0 3px 8px rgba(0,0,0,0.15); }
 
  /* Sections */
  .section { background:white; padding:22px; border-radius:14px; margin-top:35px; box-shadow:0 3px 10px rgba(0,0,0,0.12); font-size:17px; }
@@ -29,149 +31,31 @@
   .util-card h3 { margin-top:0; margin-bottom:8px; color:#b71c1c; font-size:16px; }
   .util-card button { margin-top:8px; padding:8px 12px; border:none; border-radius:8px; background:#0d47a1; color:#fff; cursor:pointer; font-size:14px; }
   .util-card select { width:100%; padding:8px; border-radius:8px; border:1px solid #ccc; margin-top:4px; }
-  .weather-box { margin-top:8px; background:#e3f2fd; padding:8px; border-radius:8px; font-size:13px; }
   .back-top { position:fixed; bottom:20px; right:20px; width:42px; height:42px; border-radius:50%; border:none; cursor:pointer; background:#b71c1c; color:#fff; box-shadow:0 4px 10px rgba(0,0,0,0.2); font-size:18px; z-index:999; }
 @media (min-width: 768px) {
   .toc-grid { grid-template-columns: repeat(3, 1fr); }
   .util-grid { grid-template-columns: repeat(2, 1fr); }
 }
-  .util-grid { grid-template-columns: repeat(2, 1fr); }
-  body { font-size:22px; }
-}
 /* Mobile Enhancements Only */
 @media (max-width: 767px) {
-  body {font-size:30px !important; line-height:2.3 !important; padding:10px !important;}
-  h1 {font-size:38px !important;}
-  h2 {font-size:34px !important;}
-  .util-grid {grid-template-columns:1fr !important; gap:38px !important;}
-  .util-card {font-size:28px !important; padding:38px !important; border-radius:26px !important;}
-  .util-card button, .util-card select {font-size:28px !important; padding:22px !important; border-radius:20px !important; width:100% !important;}
-  .toc-grid {grid-template-columns:1fr !important; gap:32px !important;}
-  .toc-item {font-size:34px !important; padding:48px !important; border-radius:26px !important;}
-  .toc-item i {font-size:52px !important; margin-bottom:22px !important;}
-  .section {font-size:30px !important; padding:40px !important; border-radius:28px !important; margin-bottom:40px !important;}
-  input, select, button {font-size:28px !important; padding:20px !important; border-radius:18px !important;}
-  #searchBox {width:95% !important;}
-  .weather-box {font-size:26px !important; padding:20px !important;}
-  
+  body {font-size:18px !important; line-height:1.6 !important; padding:12px !important;}
+  h1 {font-size:26px !important;}
+  h2 {font-size:22px !important;}
+  .util-grid {grid-template-columns:1fr !important; gap:20px !important;}
+  .util-card {font-size:16px !important; padding:20px !important; border-radius:16px !important;}
+  .util-card h3 {font-size:18px !important;}
+  .util-card button, .util-card select {font-size:16px !important; padding:14px !important; border-radius:12px !important; width:100% !important;}
+  .toc-grid {grid-template-columns:repeat(2, 1fr) !important; gap:16px !important; grid-auto-rows:1fr !important;}
+  .toc-item {font-size:20px !important; padding:24px 12px !important; border-radius:16px !important; min-height:auto !important;}
+  .toc-item i {font-size:42px !important; margin-bottom:12px !important;}
+  .toc-category {font-size:24px !important; padding:20px !important; margin-top:20px !important;}
+  .section {font-size:18px !important; padding:24px !important; border-radius:18px !important; margin-bottom:24px !important;}
+  .return {font-size:16px !important; padding:16px !important;}
+  input, select, button {font-size:16px !important; padding:14px !important; border-radius:12px !important;}
+  #searchBox {width:95% !important; font-size:16px !important; padding:14px !important;}
+  .back-top {width:50px !important; height:50px !important; font-size:20px !important; bottom:20px !important; right:20px !important;}
 }
 
-  h1 { font-size:32px !important; }
-  h2 { font-size:30px !important; }
-
-  /* UTIL GRID */
-  .util-grid { grid-template-columns:1fr !important; gap:28px !important; }
-  .util-card {
-    font-size:24px !important;
-    padding:32px !important;
-    border-radius:22px !important;
-  }
-  .util-card button,
-  .util-card select {
-    font-size:24px !important;
-    padding:18px !important;
-    border-radius:16px !important;
-  }
-
-  /* TABLE OF CONTENT — BIG BUTTONS */
-  .toc-grid { grid-template-columns:1fr !important; gap:26px !important; }
-  .toc-item {
-    font-size:30px !important;       /* BIGGER TEXT */
-    padding:40px !important;         /* BIGGER AREA */
-    border-radius:24px !important;
-  }
-  .toc-item i {
-    font-size:45px !important;       /* BIGGER ICON */
-    margin-bottom:18px !important;
-  }
-
-  /* SECTIONS */
-  .section {
-    font-size:26px !important;
-    padding:34px !important;
-    border-radius:24px !important;
-  }
-
-  /* FORM ELEMENTS */
-  input, select, button {
-    font-size:24px !important;
-    padding:16px !important;
-    border-radius:16px !important;
-  }
-
-  .weather-box { font-size:22px !important; padding:18px !important; }
-  #searchBox { width:90% !important; font-size:24px !important; padding:18px !important; }
-
-  /* Accessibility buttons */
-  
-}
-
-  h1 { font-size:32px !important; }
-  h2 { font-size:30px !important; }
-
-  .util-grid { grid-template-columns:1fr !important; gap:28px !important; }
-  .toc-grid { grid-template-columns:1fr !important; gap:22px !important; }
-
-  .util-card {
-    font-size:24px !important;
-    padding:32px !important;
-    border-radius:22px !important;
-  }
-  .util-card button,
-  .util-card select {
-    font-size:24px !important;
-    padding:18px !important;
-    border-radius:16px !important;
-  }
-
-  .toc-item {
-    font-size:26px !important;
-    padding:32px !important;
-    border-radius:22px !important;
-  }
-  .toc-item i {
-    font-size:38px !important;
-    margin-bottom:14px !important;
-  }
-
-  .section {
-    font-size:26px !important;
-    padding:34px !important;
-    border-radius:24px !important;
-  }
-
-  input, select, button {
-    font-size:24px !important;
-    padding:16px !important;
-    border-radius:16px !important;
-  }
-
-  /* enlarge nearest station + weather boxes */
-  .weather-box {
-    font-size:22px !important;
-    padding:18px !important;
-  }
-
-  /* search box */
-  #searchBox {
-    width:90% !important;
-    font-size:24px !important;
-    padding:18px !important;
-  }
-
-  /* Accessibility buttons */
-  
-}
-  .toc-item { font-size:22px !important; padding:26px !important; border-radius:18px !important; }
-  .util-card { font-size:20px !important; padding:24px !important; border-radius:18px !important; }
-  .util-grid { grid-template-columns:1fr !important; }
-  .toc-grid { grid-template-columns:1fr !important; }
-  .section { font-size:21px !important; padding:28px !important; border-radius:20px !important; }
-  h2 { font-size:26px !important; }
-  h1 { font-size:28px !important; }
-  .toc-item i, .util-card h3 i { font-size:32px !important; }
-  button, select { font-size:20px !important; padding:14px !important; }
-}
 </style>
 
 
@@ -227,55 +111,6 @@ function findNearestStation(){
     box.textContent = '❌ تعذّر الحصول على موقعك. تأكد من السماح لتحديد الموقع.';
   });
 }
-
-// الطقس المباشر لكل وجهة (يتطلب مفتاح OpenWeatherMap)
-const OPENWEATHER_KEY = 'YOUR_OPENWEATHER_API_KEY_HERE';
-const PLACES = {
-  vadi:{ name:'وادي إسطنبول', lat:41.1076, lon:28.9872 },
-  moi:{ name:'مول إسطنبول', lat:41.0620, lon:28.8106 },
-  kale:{ name:'Kale Outlet', lat:41.0185, lon:28.8720 },
-  akasya:{ name:'Akasya Mall', lat:41.0006, lon:29.0364 },
-  forum:{ name:'Forum İstanbul', lat:41.0481, lon:28.8965 },
-  vialand:{ name:'Vialand', lat:41.1071, lon:28.9275 },
-  balat:{ name:'حي بلاط', lat:41.0295, lon:28.9496 },
-  nisantasi:{ name:'نيشان تاشي', lat:41.0442, lon:28.9904 },
-  emirgan:{ name:'أميرجان', lat:41.1098, lon:29.0554 },
-  pierloti:{ name:'بيير لوتي', lat:41.0578, lon:28.9366 },
-  bebek:{ name:'ببك', lat:41.0841, lon:29.0434 },
-  tema:{ name:'Tema World', lat:41.0593, lon:28.7946 },
-  ozdilek:{ name:'ÖzdilekPark', lat:41.0813, lon:29.0116 },
-  besiktas:{ name:'بيشكتاش', lat:41.0430, lon:29.0025 },
-  uskudar:{ name:'أوسكودار', lat:41.0256, lon:29.0153 }
-};
-
-function getWeatherForSelected(){
-  const sel = document.getElementById('weatherPlace');
-  const key = sel.value;
-  const box = document.getElementById('weatherResult');
-  if(!key){ box.textContent = 'اختر وجهة أولاً.'; return; }
-  if(!OPENWEATHER_KEY || OPENWEATHER_KEY === 'YOUR_OPENWEATHER_API_KEY_HERE'){
-    box.textContent = '⚠️ أضف مفتاح OpenWeatherMap في الكود أولاً.';
-    return;
-  }
-  const p = PLACES[key];
-  box.textContent = '⏳ يجري جلب حالة الطقس...';
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${p.lat}&lon=${p.lon}&units=metric&lang=ar&appid=${OPENWEATHER_KEY}`;
-  fetch(url)
-    .then(r => r.json())
-    .then(data => {
-      if(data.cod !== 200){ box.textContent = 'تعذّر جلب حالة الطقس.'; return; }
-      const t = Math.round(data.main.temp);
-      const desc = data.weather[0].description;
-      const hum = data.main.humidity;
-      let advice = '';
-      if(t >= 18 && t <= 26 && !/مطر|عاصف/.test(desc)) advice = 'الوقت مثالي للتنزه والمشي.';
-      else if(t < 10) advice = 'يفضل ارتداء ملابس دافئة جداً.';
-      else if(/مطر/.test(desc)) advice = 'يفضل حمل مظلة أو اختيار مكان مغلق (مول).';
-      else advice = 'الطقس جيد لكن خذ احتياطاتك حسب راحتك.';
-      box.innerHTML = `🌤 <b>${p.name}</b><br>الحرارة: ${t}°C<br>الوصف: ${desc}<br>الرطوبة: ${hum}%<br>🕒 نصيحة: ${advice}`;
-    })
-    .catch(() => { box.textContent = 'خطأ في الاتصال بخدمة الطقس.'; });
-}
 </script>
 <style>
 /* MOBILE PREVIEW TOGGLE */
@@ -311,55 +146,44 @@ function getWeatherForSelected(){
 </script>
 
   </div>
-  <div class="util-card">
-    <h3><i class="fa-solid fa-cloud-sun"></i> الطقس حسب الوجهة</h3>
-    <p>اختر المكان الذي تريد زيارته لتحصل على حالة الطقس الحالية ونصيحة لأفضل وقت للزيارة.</p>
-    <select id="weatherPlace">
-      <option value="">اختر وجهة...</option>
-      <option value="vadi">وادي إسطنبول</option>
-      <option value="moi">مول إسطنبول</option>
-      <option value="kale">Kale Outlet</option>
-      <option value="akasya">Akasya Mall</option>
-      <option value="forum">Forum İstanbul</option>
-      <option value="vialand">Vialand</option>
-      <option value="balat">حي بلاط</option>
-      <option value="nisantasi">نيشان تاشي</option>
-      <option value="emirgan">أميرجان</option>
-      <option value="pierloti">بيير لوتي</option>
-      <option value="bebek">ببك</option>
-      <option value="tema">Tema World</option>
-      <option value="ozdilek">ÖzdilekPark</option>
-      <option value="besiktas">بيشكتاش</option>
-      <option value="uskudar">أوسكودار</option>
-    </select>
-    <button onclick="getWeatherForSelected()">عرض حالة الطقس</button>
-    <div id="weatherResult" class="weather-box">لم يتم اختيار وجهة بعد.</div>
-  </div>
 </div>
 
 <div class="toc-grid">
+
+ <div class="toc-category"><i class="fa-solid fa-tree"></i> حدائق / أماكن طبيعية</div>
  <a class="toc-item" href="#baltajapan"><i class="fa-solid fa-tree"></i> حديقة Baltalimanı اليابانية</a>
- <a class="toc-item" href="#torium"><i class="fa-solid fa-store"></i> Torium Mall</a>
+ <a class="toc-item" href="#emirgan"><i class="fa-solid fa-tree"></i> أميرجان</a>
+ <a class="toc-item" href="#pierloti"><i class="fa-solid fa-cable-car"></i> بيير لوتي</a>
+
+ <div class="toc-category"><i class="fa-solid fa-landmark"></i> قصور تاريخية</div>
  <a class="toc-item" href="#ihlamur"><i class="fa-solid fa-building-columns"></i> قصر إهلامور</a>
  <a class="toc-item" href="#beylerbeyi"><i class="fa-solid fa-landmark"></i> قصر بيلار بيه</a>
  <a class="toc-item" href="#kucuksu"><i class="fa-solid fa-landmark-dome"></i> كوتشوك سو</a>
+
+ <div class="toc-category"><i class="fa-solid fa-mountain-sun"></i> متنزهات / حدائق عامة</div>
  <a class="toc-item" href="#nakka"><i class="fa-solid fa-mountain-sun"></i> نكّاش تبه</a>
- <a class="toc-item" href="#vadi"><i class="fa-solid fa-bag-shopping"></i> وادي إسطنبول</a>
+
+ <div class="toc-category"><i class="fa-solid fa-shopping-bag"></i> مولات / مراكز تسوق</div>
+ <a class="toc-item" href="#torium"><i class="fa-solid fa-store"></i> Torium Mall</a>
  <a class="toc-item" href="#moi"><i class="fa-solid fa-bag-shopping"></i> مول إسطنبول</a>
  <a class="toc-item" href="#kale"><i class="fa-solid fa-store"></i> Kale Outlet</a>
  <a class="toc-item" href="#akasya"><i class="fa-solid fa-shop"></i> Akasya Mall</a>
  <a class="toc-item" href="#forum"><i class="fa-solid fa-shop"></i> Forum İstanbul</a>
+ <a class="toc-item" href="#ozdilek"><i class="fa-solid fa-building"></i> ÖzdilekPark</a>
+ <a class="toc-item" href="#marmara"><i class="fa-solid fa-shop"></i> Marmara Forum</a>
  <a class="toc-item" href="#vialand"><i class="fa-solid fa-roller-coaster"></i> Vialand</a>
+
+ <div class="toc-category"><i class="fa-solid fa-ferris-wheel"></i> مدن ملاهي / ترفيه</div>
+ <a class="toc-item" href="#tema"><i class="fa-solid fa-building-circle-check"></i> Tema World</a>
+ <a class="toc-item" href="#vadi"><i class="fa-solid fa-bag-shopping"></i> وادي إسطنبول</a>
+
+ <div class="toc-category"><i class="fa-solid fa-city"></i> أحياء / شوارع</div>
  <a class="toc-item" href="#balat"><i class="fa-solid fa-city"></i> حي بلاط</a>
  <a class="toc-item" href="#nisantasi"><i class="fa-solid fa-building"></i> نيشان تاشي</a>
- <a class="toc-item" href="#emirgan"><i class="fa-solid fa-tree"></i> أميرجان</a>
- <a class="toc-item" href="#pierloti"><i class="fa-solid fa-cable-car"></i> بيير لوتي</a>
  <a class="toc-item" href="#bebek"><i class="fa-solid fa-water"></i> ببك</a>
- <a class="toc-item" href="#tema"><i class="fa-solid fa-building-circle-check"></i> Tema World</a>
- <a class="toc-item" href="#ozdilek"><i class="fa-solid fa-building"></i> ÖzdilekPark</a>
  <a class="toc-item" href="#besiktas"><i class="fa-solid fa-ship"></i> بيشكتاش</a>
  <a class="toc-item" href="#uskudar"><i class="fa-solid fa-ferry"></i> أوسكودار</a>
-  <a class="toc-item" href="#marmara"><i class="fa-solid fa-shop"></i> Marmara Forum</a>
+
 </div>
 
 <!-- SECTIONS BELOW (kept same content but visually improved) -->
@@ -474,6 +298,9 @@ function getWeatherForSelected(){
 
 <div class="section" id="vialand">
 <h2><i class="fa-solid fa-roller-coaster"></i> Vialand (Isfanbul)</h2>
+<div style="text-align:center; margin:15px 0;">
+  <img src="https://www.vialand.com.tr/images/logo.png" alt="Vialand Logo" style="max-width:200px; height:auto; border-radius:8px;">
+</div>
 <p><b>شرح مفصل:</b><br>رحلة ترفيهية ممتعة تبدأ من تقسيم إلى Mecidiyeköy عبر M2، ثم التحويل إلى خط M7 الحديث الذي يوصلك إلى Veysel Karani. من هناك تمشي حوالي 10 دقائق للوصول لمدينة الألعاب والمول.</p>
 <p><b>خطوات الطريق:</b><br>1. M2 → Mecidiyeköy<br>2. M7 → Veysel Karani<br>3. 10 دقائق مشي للوصول</p>
 <div class="return"><b>رحلة العودة (مفصلة):</b><br>1. الرجوع إلى Veysel Karani<br>2. ركوب M7 نحو Mecidiyeköy<br>3. ركوب M2 نحو Taksim
