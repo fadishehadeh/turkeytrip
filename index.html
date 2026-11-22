@@ -1,549 +1,525 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0b2740" />
 <title>دليل رحلات إسطنبول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
- body { font-family: Arial, sans-serif; background:#eef1f5; padding:20px; line-height:1.7; transition:0.3s; font-size:16px; }
- h1 { color:#b71c1c; text-align:center; margin-bottom:30px; }
- h2 { color:#0d47a1; margin-top:40px; display:flex; align-items:center; gap:10px; }
- a { text-decoration:none; color:inherit; }
- 
- /* Accessibility buttons */
- 
- 
-
- /* TOC grid */
- .toc-grid { display:grid !important; grid-template-columns: repeat(2, 1fr) !important; gap:12px; margin-top:20px; }
- .toc-item { background:white; padding:18px; border-radius:12px; text-align:center; font-size:22px; font-weight:bold; color:#1a237e; box-shadow:0 3px 8px rgba(0,0,0,0.1); transition:0.3s; }
- .toc-item:hover { transform:translateY(-5px); background:#e3f2fd; }
- .toc-item i { font-size:36px; display:block; margin-bottom:10px; color:#c62828; }
- .toc-category { grid-column: 1 / -1; background:#b71c1c; color:white; padding:14px; border-radius:10px; text-align:center; font-size:24px; font-weight:bold; margin-top:15px; box-shadow:0 3px 8px rgba(0,0,0,0.15); }
-
- /* Sections */
- .section { background:white; padding:22px; border-radius:14px; margin-top:35px; box-shadow:0 3px 10px rgba(0,0,0,0.12); font-size:17px; }
- .return { background:#fff8e1; padding:12px; border-radius:10px; margin-top:15px; border:1px solid #ffe0b2; font-weight:bold; }
-  /* أدوات إضافية */
-  .util-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin:20px 0; }
-  .util-card { background:#fff; padding:18px; border-radius:14px; box-shadow:0 3px 8px rgba(0,0,0,0.12); font-size:16px; }
-  .util-card h3 { margin-top:0; margin-bottom:8px; color:#b71c1c; font-size:16px; }
-  .util-card button { margin-top:8px; padding:8px 12px; border:none; border-radius:8px; background:#0d47a1; color:#fff; cursor:pointer; font-size:14px; }
-  .util-card select { width:100%; padding:8px; border-radius:8px; border:1px solid #ccc; margin-top:4px; }
-  .back-top { position:fixed; bottom:20px; right:20px; width:42px; height:42px; border-radius:50%; border:none; cursor:pointer; background:#b71c1c; color:#fff; box-shadow:0 4px 10px rgba(0,0,0,0.2); font-size:18px; z-index:999; }
-@media (min-width: 768px) {
-  .toc-grid { grid-template-columns: repeat(3, 1fr); }
-  .util-grid { grid-template-columns: repeat(2, 1fr); }
+:root{
+  --ink:#0b2740; --ink-2:#456078; --bg:#eef2f5; --card:#ffffff; --rule:#d9e1e8;
+  --teal:#0b7f86; --soft:#e4f1f2; --red:#c8372d; --focus:#0b7f86;
 }
-/* Mobile Enhancements Only */
-@media (max-width: 767px) {
-  body {font-size:18px !important; line-height:1.6 !important; padding:12px !important;}
-  h1 {font-size:26px !important;}
-  h2 {font-size:22px !important;}
-  .util-grid {grid-template-columns:1fr !important; gap:20px !important;}
-  .util-card {font-size:16px !important; padding:20px !important; border-radius:16px !important;}
-  .util-card h3 {font-size:18px !important;}
-  .util-card button, .util-card select {font-size:16px !important; padding:14px !important; border-radius:12px !important; width:100% !important;}
-  .toc-grid {grid-template-columns:repeat(2, 1fr) !important; gap:16px !important; grid-auto-rows:1fr !important;}
-  .toc-item {font-size:20px !important; padding:24px 12px !important; border-radius:16px !important; min-height:auto !important;}
-  .toc-item i {font-size:42px !important; margin-bottom:12px !important;}
-  .toc-category {font-size:24px !important; padding:20px !important; margin-top:20px !important;}
-  .section {font-size:18px !important; padding:24px !important; border-radius:18px !important; margin-bottom:24px !important;}
-  .return {font-size:16px !important; padding:16px !important;}
-  input, select, button {font-size:16px !important; padding:14px !important; border-radius:12px !important;}
-  #searchBox {width:95% !important; font-size:16px !important; padding:14px !important;}
-  .back-top {width:50px !important; height:50px !important; font-size:20px !important; bottom:20px !important; right:20px !important;}
-}
+*{box-sizing:border-box}
+html{font-size:17px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic',Tahoma,Arial,sans-serif;line-height:1.8}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
 
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:#fff;padding:48px 16px 40px}
+.hero-in{max-width:1080px;margin:0 auto}
+.hero h1{margin:0 0 .6rem;font-size:clamp(2rem,6vw,3.2rem);line-height:1.25;font-weight:700}
+.hero p{margin:0 0 1.8rem;max-width:36rem;color:#c5d5e4;font-size:1.05rem}
+.strip{display:flex;align-items:center;flex-wrap:nowrap;overflow:hidden;direction:ltr;justify-content:flex-end}
+.to{display:inline-block;margin-inline:.45em;color:var(--ink-2);font-size:.8em}
+.strip .ln{flex:none;font-size:.95rem;padding:.1em .75em;box-shadow:0 0 0 3px var(--ink)}
+.strip .seg{flex:1 1 14px;min-width:10px;max-width:56px;height:4px;background:#5d7a96}
+.strip .seg:last-child{display:none}
+
+/* ---------- line badges (Istanbul line colours) ---------- */
+.ln{display:inline-block;min-width:2.2em;padding:0 .55em;border-radius:6px;font-weight:700;font-size:.82em;line-height:1.7;color:#fff;background:#5b6572;text-align:center;direction:ltr;unicode-bidi:isolate;vertical-align:baseline}
+.ln-M1{background:#1d8fd0}.ln-M2{background:#0a8f4a}.ln-M3{background:#2597b8}.ln-M4{background:#d6336c}
+.ln-M5{background:#7b3fa0}.ln-M6{background:#9a6b3a}.ln-M7{background:#f08cab;color:#2a0f18}.ln-M9{background:#e8b400;color:#2b2200}
+.ln-T1{background:#1f5fb8}.ln-T5{background:#3a86ad}.ln-F{background:#5b6572}
+.ln-marmaray{background:#164e8a}.ln-MB{background:#b4232a}
+.ln-bus{background:#b45309}.ln-ferry{background:#0e7490}.ln-tele{background:#7c4a1d}.ln-x{background:#5b6572}
+
+/* ---------- sticky bar ---------- */
+.bar{position:sticky;top:0;z-index:30;background:rgba(238,242,245,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar-in{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;gap:8px;align-items:center}
+.search{flex:1;min-width:0;font:inherit;font-size:1rem;padding:.6rem 1rem;min-height:46px;border:1px solid #b9c6d2;border-radius:12px;background:#fff;color:var(--ink)}
+.search::placeholder{color:#6b8196}
+.sz{flex:none;width:46px;height:46px;border:1px solid #b9c6d2;border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.sz:hover{background:var(--soft)}
+
+/* ---------- notice + destination index ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px 90px}
+.fare{display:flex;gap:.8rem;align-items:flex-start;margin:22px 0 0;padding:.85rem 1.1rem;background:var(--soft);border:1px solid #b8dadc;border-radius:12px;font-size:.95rem}
+.fare i{color:var(--teal);margin-top:.35rem}
+.fare p{margin:0}
+.index{margin-top:20px}
+.index-group{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .5rem;padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.index-label{flex:0 0 100%;font-weight:600;color:var(--teal)}
+.index-label i{margin-inline-end:.35rem}
+.chip{display:inline-flex;align-items:center;min-height:40px;padding:.1rem .95rem;border:1px solid #b9c6d2;border-radius:999px;background:#fff;text-decoration:none;font-size:.95rem}
+.chip:hover{background:var(--soft);border-color:var(--teal)}
+@media (min-width:720px){.index-label{flex:0 0 13rem}}
+
+/* ---------- categories and cards ---------- */
+.cat{display:flex;align-items:center;gap:.7rem;margin:44px 0 16px;font-size:1.4rem;line-height:1.4}
+.cat i{color:var(--teal)}
+.cat::after{content:'';flex:1;height:1px;background:var(--rule)}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:900px){.grid{grid-template-columns:1fr 1fr;align-items:start}}
+.route{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:20px 20px 12px;scroll-margin-top:80px}
+.route:target{border-color:var(--teal);box-shadow:0 0 0 3px rgba(11,127,134,.18)}
+.route-head{display:flex;align-items:center;gap:12px}
+.route-ico{flex:none;width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--teal);display:grid;place-items:center;font-size:1.1rem}
+.route h3{margin:0;font-size:1.2rem;line-height:1.45}
+.logo{margin-inline-start:auto;max-height:28px;max-width:96px;object-fit:contain}
+.lead{margin:.9rem 0 0;color:var(--ink-2);font-size:.97rem}
+.warn{margin:.8rem 0 0;padding:.6rem .85rem;background:#fff6d6;border:1px solid #efd678;border-radius:10px;font-size:.9rem}
+.badges{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.1rem 0 .8rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1rem;margin:0 0 1.3rem;padding:.8rem 1rem;background:#f6f8fa;border-radius:12px;font-size:.95rem}
+.facts div{margin:0}
+.facts dt{font-size:.8rem;color:var(--ink-2);line-height:1.5}
+.facts dd{margin:0;font-weight:600;line-height:1.55}
+.facts .wide{grid-column:1/-1}
+.steps-title{margin:0 0 .6rem;font-size:1rem;font-weight:600}
+
+/* route as a line diagram */
+.stops{list-style:none;margin:0;padding:0;counter-reset:stop}
+.stops li{position:relative;counter-increment:stop;padding-inline-start:2.7rem;padding-bottom:1.05rem;font-size:.97rem;line-height:1.7}
+.stops li::before{content:counter(stop);position:absolute;inset-inline-start:0;top:.05rem;width:1.85rem;height:1.85rem;border-radius:50%;background:#fff;border:2px solid var(--teal);color:var(--teal);font-weight:700;font-size:.82rem;line-height:1;display:grid;place-items:center}
+.stops li::after{content:'';position:absolute;inset-inline-start:calc(.925rem - 1px);top:2rem;bottom:.1rem;width:2px;background:#c7d3dd}
+.stops li:last-child{padding-bottom:.2rem}
+.stops li:last-child::after{display:none}
+.stops li:last-child::before{background:var(--red);border-color:var(--red);color:#fff}
+.stops .ln{margin-inline:.1em}
+
+.map{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.1rem;min-height:46px;padding:.4rem 1.1rem;border-radius:12px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600}
+.map:hover{background:#12395c}
+.back{margin-top:1rem;border-top:1px solid var(--rule)}
+.back summary{display:flex;align-items:center;gap:.6rem;min-height:50px;cursor:pointer;font-weight:600;list-style:none}
+.back summary::-webkit-details-marker{display:none}
+.back summary::after{content:'';margin-inline-start:auto;width:.55rem;height:.55rem;border-inline-end:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg);transition:transform .2s}
+.back[open] summary::after{transform:rotate(-135deg)}
+.back .stops{padding:.4rem 0 .6rem}
+.note{margin:.2rem 0 .8rem;color:var(--ink-2);font-size:.9rem}
+
+.empty{margin:48px 0;padding:2rem 1rem;text-align:center;color:var(--ink-2);border:1px dashed #b9c6d2;border-radius:14px;background:#fff}
+.top{position:fixed;inset-inline-end:16px;bottom:18px;z-index:40;width:48px;height:48px;border:none;border-radius:50%;background:var(--ink);color:#fff;font-size:1.05rem;cursor:pointer;box-shadow:0 4px 14px rgba(11,39,64,.3);opacity:0;pointer-events:none;transition:opacity .2s}
+.top.show{opacity:1;pointer-events:auto}
+[hidden]{display:none!important}
+@media (max-width:520px){.route{padding:16px 16px 8px}.cat{font-size:1.25rem}}
 </style>
-
-
 <link rel="manifest" href="manifest.json">
 <script>
-window.addEventListener('load', () => {
+window.addEventListener('load', function(){
   if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
 });
 </script>
-<script>
-
-
-function backToTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
-
-// بيانات محطات المترو الأساسية في إسطنبول (تقريبية)
-const STATIONS = [
-  { name:'Taksim', lines:'M2, F1', lat:41.0369, lon:28.9850 },
-  { name:'Kabataş', lines:'T1, F1, Ferries', lat:41.0341, lon:28.9946 },
-  { name:'Yenikapı', lines:'M1, M2, Marmaray', lat:41.0053, lon:28.9497 },
-  { name:'Levent', lines:'M2', lat:41.0811, lon:29.0110 },
-  { name:'Üsküdar', lines:'M5, Marmaray, Ferries', lat:41.0256, lon:29.0153 },
-  { name:'Haliç', lines:'M2', lat:41.0248, lon:28.9613 },
-  { name:'Mecidiyeköy', lines:'M2, M7', lat:41.0750, lon:28.9897 }
-];
-
-function haversine(lat1, lon1, lat2, lon2){
-  const toRad = d => d * Math.PI / 180;
-  const R = 6371; // km
-  const dLat = toRad(lat2-lat1);
-  const dLon = toRad(lon2-lon1);
-  const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-  return R * c;
-}
-
-function findNearestStation(){
-  const box = document.getElementById('nearestStationResult');
-  if(!navigator.geolocation){ box.textContent = '❌ المتصفح لا يدعم تحديد الموقع.'; return; }
-  box.textContent = '⏳ جاري تحديد موقعك...';
-  navigator.geolocation.getCurrentPosition(pos => {
-    const { latitude, longitude } = pos.coords;
-    let best = null;
-    STATIONS.forEach(st => {
-      const d = haversine(latitude, longitude, st.lat, st.lon);
-      if(!best || d < best.d){ best = { ...st, d }; }
-    });
-    if(best){
-      box.textContent = `✅ أقرب محطة لك الآن: ${best.name} (حوالي ${best.d.toFixed(1)} كم) | الخطوط: ${best.lines}`;
-    } else {
-      box.textContent = 'لم يتم إيجاد محطات.';
-    }
-  }, err => {
-    box.textContent = '❌ تعذّر الحصول على موقعك. تأكد من السماح لتحديد الموقع.';
-  });
-}
-</script>
-<style>
-/* MOBILE PREVIEW TOGGLE */
-
-
-</style>
-<script>
-
-</script>
 </head>
 <body>
-<!-- Accessibility Tools -->
 
+<header class="hero">
+  <div class="hero-in">
+    <h1>إسطنبول من ساحة تقسيم</h1>
+    <p>23 وجهة بالمترو والترام والفينيكولار والعبّارة، خطوة بخطوة مع رحلة العودة.</p>
+    <div class="strip" aria-hidden="true">
+      <span class="ln ln-F">F1</span><span class="seg"></span><span class="ln ln-M2">M2</span><span class="seg"></span><span class="ln ln-marmaray">Marmaray</span><span class="seg"></span><span class="ln ln-M4">M4</span><span class="seg"></span><span class="ln ln-T1">T1</span><span class="seg"></span><span class="ln ln-M7">M7</span><span class="seg"></span><span class="ln ln-M9">M9</span>
+    </div>
+  </div>
+</header>
 
-<h1>✨ دليل رحلات إسطنبول – خطة المواصلات الكاملة ✨</h1>
-
-<!-- TABLE OF CONTENT -->
-<h2><i class="fa-solid fa-list"></i> جدول المحتوى</h2>
-
-<!-- Search Box -->
-<div style="margin:20px 0; text-align:center;">
-  <input id="searchBox" type="text" placeholder="ابحث عن مكان..." style="width:80%; padding:12px; border-radius:10px; border:1px solid #bbb; font-size:16px; text-align:right;">
-</div>
-<script>
-  document.getElementById('searchBox').addEventListener('input', function(){
-    const val = this.value.trim();
-    document.querySelectorAll('.section').forEach(sec => {
-      sec.style.display = sec.textContent.includes(val) ? 'block' : 'none';
-    });
-  });
-</script>
-
+<div class="bar" role="search">
+  <div class="bar-in">
+    <input id="searchBox" class="search" type="search" placeholder="ابحث عن مكان أو محطة..." aria-label="ابحث عن مكان أو محطة" autocomplete="off">
+    <button class="sz" id="decFont" type="button" aria-label="تصغير الخط">أ-</button>
+    <button class="sz" id="incFont" type="button" aria-label="تكبير الخط">أ+</button>
   </div>
 </div>
 
-<div class="toc-grid">
+<main class="wrap">
+  <div class="fare">
+    <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+    <p>جميع الرحلات تنطلق من تقسيم وتُدفع بالإسطنبول كارت. سعر الركوبة الواحدة في 2026 حوالي 42–46 ₺ حسب التعرفة المعتمدة، والتحويلات خلال ساعتين من أول ركوبة أرخص. الأسعار تتغير، فراجع موقع İBB أو İETT قبل السفر. المدد الزمنية تقريبية.</p>
+  </div>
 
- <div class="toc-category"><i class="fa-solid fa-tree"></i> حدائق / أماكن طبيعية</div>
- <a class="toc-item" href="#baltajapan"><i class="fa-solid fa-tree"></i> حديقة Baltalimanı اليابانية</a>
- <a class="toc-item" href="#emirgan"><i class="fa-solid fa-tree"></i> أميرجان</a>
- <a class="toc-item" href="#pierloti"><i class="fa-solid fa-cable-car"></i> بيير لوتي</a>
+  <nav class="index" aria-label="الوجهات">
+<div class="index-group"><span class="index-label"><i class="fa-solid fa-tree" aria-hidden="true"></i> حدائق / أماكن طبيعية</span><a class="chip" href="#baltajapan" data-for="baltajapan">حديقة Baltalimanı اليابانية</a><a class="chip" href="#emirgan" data-for="emirgan">أميرجان</a><a class="chip" href="#pierloti" data-for="pierloti">بيير لوتي</a></div>
+<div class="index-group"><span class="index-label"><i class="fa-solid fa-landmark" aria-hidden="true"></i> قصور تاريخية</span><a class="chip" href="#ihlamur" data-for="ihlamur">قصر إهلامور</a><a class="chip" href="#beylerbeyi" data-for="beylerbeyi">قصر بيلار بيه</a><a class="chip" href="#kucuksu" data-for="kucuksu">كوتشوك سو</a></div>
+<div class="index-group"><span class="index-label"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> متنزهات / حدائق عامة</span><a class="chip" href="#nakka" data-for="nakka">نكّاش تبه</a></div>
+<div class="index-group"><span class="index-label"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i> مولات / مراكز تسوق</span><a class="chip" href="#torium" data-for="torium">Torium Mall</a><a class="chip" href="#moi" data-for="moi">مول إسطنبول</a><a class="chip" href="#kale" data-for="kale">Kale Outlet</a><a class="chip" href="#akasya" data-for="akasya">Akasya Mall</a><a class="chip" href="#forum" data-for="forum">Forum İstanbul</a><a class="chip" href="#ozdilek" data-for="ozdilek">ÖzdilekPark</a><a class="chip" href="#marmara" data-for="marmara">Marmara Forum</a><a class="chip" href="#vialand" data-for="vialand">Vialand</a></div>
+<div class="index-group"><span class="index-label"><i class="fa-solid fa-ferris-wheel" aria-hidden="true"></i> مدن ملاهي / ترفيه</span><a class="chip" href="#tema" data-for="tema">Tema World</a><a class="chip" href="#vadi" data-for="vadi">وادي إسطنبول</a></div>
+<div class="index-group"><span class="index-label"><i class="fa-solid fa-city" aria-hidden="true"></i> أحياء / شوارع</span><a class="chip" href="#balat" data-for="balat">حي بلاط</a><a class="chip" href="#nisantasi" data-for="nisantasi">نيشان تاشي</a><a class="chip" href="#bebek" data-for="bebek">ببك</a><a class="chip" href="#besiktas" data-for="besiktas">بيشكتاش</a><a class="chip" href="#uskudar" data-for="uskudar">أوسكودار</a></div>
+<div class="index-group"><span class="index-label"><i class="fa-solid fa-utensils" aria-hidden="true"></i> مطاعم</span><a class="chip" href="#midyeci" data-for="midyeci">Midyeci Yasin – Çengelköy</a></div>
+  </nav>
 
- <div class="toc-category"><i class="fa-solid fa-landmark"></i> قصور تاريخية</div>
- <a class="toc-item" href="#ihlamur"><i class="fa-solid fa-building-columns"></i> قصر إهلامور</a>
- <a class="toc-item" href="#beylerbeyi"><i class="fa-solid fa-landmark"></i> قصر بيلار بيه</a>
- <a class="toc-item" href="#kucuksu"><i class="fa-solid fa-landmark-dome"></i> كوتشوك سو</a>
+<section class="cat-group" aria-labelledby="cat-0">
+<h2 class="cat" id="cat-0"><i class="fa-solid fa-tree" aria-hidden="true"></i> حدائق / أماكن طبيعية</h2>
+<div class="grid">
+<article class="route" id="baltajapan" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-tree"></i></span><h3>حديقة Baltalimanı اليابانية</h3></header>
+  <p class="lead">حديقة جميلة وهادئة على الطراز الياباني تقع قرب مضيق البوسفور. يمكن الوصول إليها بسهولة باستخدام مترو M2 ثم المتروبوس، ومن هناك مشي قصير وممتع بين الأشجار حتى المدخل.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-MB">Metrobüs</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–30 دقيقة</dd></div><div><dt>الوصول</dt><dd>Baltalimanı</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت (مترو + متروبوس)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>من Taksim إلى Şişli–Mecidiyeköy</bdi></li><li>الممر الداخلي إلى محطة المتروبوس Mecidiyeköy</li><li>المتروبوس باتجاه Sarıyer / Baltalimanı</li><li>النزول في محطة Baltalimanı</li><li>مشي 7–9 دقائق إلى مدخل الحديقة</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Baltalimani+Japanese+Garden" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>Baltalimanı</li><li>المتروبوس</li><li>Mecidiyeköy</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="emirgan" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-tree"></i></span><h3>حديقة أميرجان</h3></header>
+  <p class="lead">إحدى أجمل الحدائق المطلة على البوسفور. تتوجه عبر M2 ثم باص مباشر إلى İstinye Bayırı قرب المدخل.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-bus">Bus</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>35–40 دقيقة</dd></div><div><dt>الوصول</dt><dd>İstinye Bayırı</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت (مترو + باص)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>ITÜ–Ayazağa</bdi></li><li><bdi>باص 29Ş أو 40B أو 42T</bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>İstinye Bayırı</bdi></li><li>وصول مباشر للمدخل</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=emirgan+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>العودة بالباص إلى ITÜ–Ayazağa</li><li><span class="ln ln-M2">M2</span> إلى Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="pierloti" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-cable-car"></i></span><h3>تلة بيير لوتي</h3></header>
+  <p class="lead">رحلة بانورامية مميزة عبر T5 ثم التلفريك إلى قمة التلة.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-T5">T5</span><span class="ln ln-tele">Teleferik</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–30 دقيقة</dd></div><div><dt>الوصول</dt><dd>Eyüpsultan</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت (قد يكون للتلفريك تعرفة منفصلة)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Haliç</bdi></li><li><bdi><span class="ln ln-T5">T5</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Eyüpsultan Teleferik</bdi></li><li>التلفريك إلى القمة</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=pierloti+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>التلفريك</li><li><span class="ln ln-T5">T5</span></li><li>Haliç</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+</div>
+</section>
 
- <div class="toc-category"><i class="fa-solid fa-mountain-sun"></i> متنزهات / حدائق عامة</div>
- <a class="toc-item" href="#nakka"><i class="fa-solid fa-mountain-sun"></i> نكّاش تبه</a>
+<section class="cat-group" aria-labelledby="cat-1">
+<h2 class="cat" id="cat-1"><i class="fa-solid fa-landmark" aria-hidden="true"></i> قصور تاريخية</h2>
+<div class="grid">
+<article class="route" id="ihlamur" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></span><h3>قصر إهلامور – Ihlamur Kasrı</h3></header>
+  <p class="lead">يقع القصر بين بشكتاش ونيشان تاشي، ويُعتبر من أجمل القصور الصغيرة التاريخية. الوصول إليه بسيط جداً عبر محطة Osmanbey ثم مشي مريح لمدة 10 دقائق.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>15–18 دقيقة</dd></div><div><dt>الوصول</dt><dd>Osmanbey</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبة واحدة بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>من Taksim إلى Osmanbey</bdi></li><li>الخروج باتجاه Valikonağı Caddesi</li><li>مشي 10 دقائق نحو القصر</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Ihlamur+Kasr%C4%B1" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <p class="note">نفس الطريق</p><ol class="stops"><li>مشياً إلى Osmanbey</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="beylerbeyi" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-landmark"></i></span><h3>قصر بيلار بيه – Beylerbeyi Sarayı</h3></header>
+  <p class="lead">يقع القصر على ضفاف البوسفور في الجانب الآسيوي، ويمكن الوصول إليه عبر الفينيكولار F1 ثم العبّارة إلى أوسكودار، وبعدها باص قصير (حوالي 10 دقائق) أو مشي نحو 20–25 دقيقة بمحاذاة البحر.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-F">F1</span><span class="ln ln-ferry">Ferry</span><span class="ln ln-bus">Bus</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>40–50 دقيقة (تقريبي)</dd></div><div><dt>الوصول</dt><dd>Beylerbeyi Sarayı</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت (F1 + عبّارة + باص)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-F">F1</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Kabataş</bdi></li><li>العبّارة إلى Üsküdar</li><li>من Üsküdar خذ باصاً باتجاه Beylerbeyi وانزل عند محطة Beylerbeyi Sarayı (أو امشِ 20–25 دقيقة)</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Beylerbeyi+Sarayi" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>Beylerbeyi</li><li>باص</li><li>Üsküdar</li><li>العبّارة</li><li>Kabataş</li><li><span class="ln ln-F">F1</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="kucuksu" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-landmark-dome"></i></span><h3>قصر كوتشوك سو – Küçüksu Kasrı</h3></header>
+  <p class="lead">من أجمل القصور على البحر. يمكن الوصول إليه بعبّارة مباشرة من Kabataş/Beşiktaş إلى رصيف Küçüksu (الرحلات محدودة وفي أيام الأسبوع، راجع جدول Şehir Hatları)، أو بالباص من Üsküdar باتجاه Beykoz.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-F">F1</span><span class="ln ln-ferry">Ferry</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>35–40 دقيقة</dd></div><div><dt>الوصول</dt><dd>Küçüksu İskelesi</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت (F1 + عبّارة)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-F">F1</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Kabataş</bdi></li><li>العبّارة من Kabataş/Beşiktaş إلى رصيف Küçüksu (حوالي 30–40 دقيقة)</li><li>مشي دقائق قليلة من الرصيف إلى القصر</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=K%C3%BC%C3%A7%C3%BCksu+Kasr%C4%B1" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>Küçüksu</li><li>العبّارة</li><li>Kabataş</li><li><span class="ln ln-F">F1</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+</div>
+</section>
 
- <div class="toc-category"><i class="fa-solid fa-shopping-bag"></i> مولات / مراكز تسوق</div>
- <a class="toc-item" href="#torium"><i class="fa-solid fa-store"></i> Torium Mall</a>
- <a class="toc-item" href="#moi"><i class="fa-solid fa-bag-shopping"></i> مول إسطنبول</a>
- <a class="toc-item" href="#kale"><i class="fa-solid fa-store"></i> Kale Outlet</a>
- <a class="toc-item" href="#akasya"><i class="fa-solid fa-shop"></i> Akasya Mall</a>
- <a class="toc-item" href="#forum"><i class="fa-solid fa-shop"></i> Forum İstanbul</a>
- <a class="toc-item" href="#ozdilek"><i class="fa-solid fa-building"></i> ÖzdilekPark</a>
- <a class="toc-item" href="#marmara"><i class="fa-solid fa-shop"></i> Marmara Forum</a>
- <a class="toc-item" href="#vialand"><i class="fa-solid fa-roller-coaster"></i> Vialand</a>
+<section class="cat-group" aria-labelledby="cat-2">
+<h2 class="cat" id="cat-2"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> متنزهات / حدائق عامة</h2>
+<div class="grid">
+<article class="route" id="nakka" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-mountain-sun"></i></span><h3>Nakkaştepe Millet Bahçesi</h3></header>
+  <p class="lead">منتزه بإطلالة خرافية على جسر البوسفور. أسهل طريق بدون باصات: M2 ثم متروبوس فقط.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-MB">Metrobüs</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–30 دقيقة</dd></div><div><dt>الوصول</dt><dd>15 Temmuz Şehitler Köprüsü</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت (مترو + متروبوس)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span> من Taksim</bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Şişli–Mecidiyeköy</bdi></li><li>ممر داخلي إلى Mecidiyeköy <span class="ln ln-MB">Metrobüs</span></li><li>المتروبوس باتجاه Söğütlüçeşme</li><li>النزول في 15 Temmuz Şehitler Köprüsü</li><li>مشي 12–14 دقيقة نحو مدخل المنتزه</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Nakka%C5%9Ftepe+Millet+Bah%C3%A7esi" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <p class="note">المسار نفسه</p><ol class="stops"><li>15 Temmuz</li><li><span class="ln ln-MB">Metrobüs</span></li><li>Mecidiyeköy</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+</div>
+</section>
 
- <div class="toc-category"><i class="fa-solid fa-ferris-wheel"></i> مدن ملاهي / ترفيه</div>
- <a class="toc-item" href="#tema"><i class="fa-solid fa-building-circle-check"></i> Tema World</a>
- <a class="toc-item" href="#vadi"><i class="fa-solid fa-bag-shopping"></i> وادي إسطنبول</a>
+<section class="cat-group" aria-labelledby="cat-3">
+<h2 class="cat" id="cat-3"><i class="fa-solid fa-shopping-bag" aria-hidden="true"></i> مولات / مراكز تسوق</h2>
+<div class="grid">
+<article class="route" id="torium" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-store"></i></span><h3>Torium Mall</h3></header>
+  <p class="lead">الوصول إلى Torium Mall سهل جداً عبر المتروبوس فقط دون الحاجة لأي باصات. أقرب محطة هي <b>Haramidere Sanayi</b> وهي على بعد 6 دقائق مشياً من باب المول.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-MB">Metrobus</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>35–40 دقيقة</dd></div><div><dt>الوصول</dt><dd>Haramidere Sanayi</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت (مترو + متروبوس)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>من Taksim إلى Şişli–Mecidiyeköy</bdi></li><li>الممر الداخلي إلى Mecidiyeköy <span class="ln ln-MB">Metrobüs</span></li><li>المتروبوس باتجاه Beylikdüzü / TÜYAP</li><li>النزول في <b>Haramidere Sanayi</b></li><li>مشي 6 دقائق إلى المول</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Torium+Mall+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>المشي من Torium إلى محطة Haramidere Sanayi</li><li>المتروبوس باتجاه Zincirlikuyu</li><li>النزول في Mecidiyeköy</li><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Taksim</bdi></li></ol>
+  </details>
+</article>
+<article class="route" id="moi" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-bag-shopping"></i></span><h3>مول إسطنبول</h3></header>
+  <p class="lead">هذه الرحلة تعتبر من أكثر الرحلات سلاسة رغم أنها تشمل 3 خطوط. تبدأ من M2 إلى Yenikapı، حيث يتوفر التحويل المباشر إلى Marmaray. بعد نزولك في Ataköy، ستجد خط M9 الحديث الذي يأخذك مباشرة إلى Masko، وهي المحطة المقترحة على خط M9 للوصول إلى المول (يُنصح بتأكيد اسم المحطة على خرائط Google قبل الانطلاق).</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-marmaray">Marmaray</span><span class="ln ln-M9">M9</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>50–60 دقيقة (تقريبي)</dd></div><div><dt>الوصول</dt><dd>Masko / M9</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li>مترو <span class="ln ln-M2">M2</span> من Taksim إلى Yenikapı</li><li>ركوب <span class="ln ln-marmaray">Marmaray</span> باتجاه Halkalı والنزول في Ataköy</li><li>ركوب <span class="ln ln-M9">M9</span> إلى Masko ثم الوصول إلى المول (أكّد المحطة على الخريطة)</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=moi+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>من Masko خذ <span class="ln ln-M9">M9</span> باتجاه Ataköy</li><li>التحويل إلى <span class="ln ln-marmaray">Marmaray</span> باتجاه Gebze والنزول في Yenikapı</li><li>ركوب <span class="ln ln-M2">M2</span> نحو Hacıosman والنزول في Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="kale" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-store"></i></span><h3>Kale Outlet</h3></header>
+  <p class="lead">تبدأ رحلتك بفينيكولار F1 الذي ينقلك من تقسيم إلى Kabataş خلال أقل من دقيقتين. هناك تربط مباشرة مع ترام T1 الذي يأخذك إلى Güngören، وهي محطة قريبة جداً من المول، ومن ثم تمشي فقط حوالي 8 دقائق للوصول.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-F">F1</span><span class="ln ln-T1">T1</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>35–40 دقيقة (تقريبي)</dd></div><div><dt>الوصول</dt><dd>Güngören + مشي 8 دقائق</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><span class="ln ln-F">F1</span> من Taksim إلى Kabataş</li><li><span class="ln ln-T1">T1</span> باتجاه Bağcılar والنزول في Güngören</li><li>مشي قصير نحو المول</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=kale+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>الرجوع إلى محطة Güngören</li><li>ركوب <span class="ln ln-T1">T1</span> باتجاه Kabataş والنزول هناك</li><li>ركوب <span class="ln ln-F">F1</span> للعودة إلى Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="akasya" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-shop"></i></span><h3>Akasya Mall</h3></header>
+  <p class="lead">من تقسيم إلى Yenikapı عبر M2، ثم تأخذ Marmaray إلى Ayrılık Çeşmesi على الطرف الآسيوي. هناك تحوّل إلى مترو M4 باتجاه Tavşantepe وانزل في محطة Ünalan، وهي أقرب محطة إلى مجمع أكاسيا.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-marmaray">Marmaray</span><span class="ln ln-M4">M4</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>55–65 دقيقة (تقريبي)</dd></div><div><dt>الوصول</dt><dd>Ünalan</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Yenikapı</bdi></li><li><bdi><span class="ln ln-marmaray">Marmaray</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Ayrılık Çeşmesi</bdi></li><li><bdi><span class="ln ln-M4">M4</span> باتجاه Tavşantepe</bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Ünalan (أقرب محطة للمول)</bdi></li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=akasya+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>من داخل المول اتجه مباشرة نحو محطة Ünalan</li><li>خذ <span class="ln ln-M4">M4</span> باتجاه Kadıköy والنزول في Ayrılık Çeşmesi</li><li>خذ <span class="ln ln-marmaray">Marmaray</span> نحو Yenikapı</li><li>خذ <span class="ln ln-M2">M2</span> إلى Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="forum" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-shop"></i></span><h3>Forum İstanbul (Bayrampaşa)</h3></header>
+  <p class="lead">مول ضخم ويضم أكثر من 300 متجر، إضافة إلى IKEA وSEA LIFE. مناسب للتسوق والترفيه وقريب جداً من محطة المترو.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-M1">M1</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–30 دقيقة</dd></div><div><dt>الوصول</dt><dd>Kocatepe</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li>من Taksim خذ خط <span class="ln ln-M2">M2</span> باتجاه Yenikapı</li><li>انزل في Yenikapı</li><li>من Yenikapı خذ خط <span class="ln ln-M1">M1A</span> أو <span class="ln ln-M1">M1B</span> باتجاه Kirazlı</li><li>انزل في محطة Kocatepe</li><li>امشِ حوالي 5 دقائق لتوصل إلى Forum İstanbul</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=forum+Istanbul+Bayrampaşa" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>ارجع مشياً إلى محطة Kocatepe</li><li>خذ خط <span class="ln ln-M1">M1A</span> أو <span class="ln ln-M1">M1B</span> باتجاه Yenikapı</li><li>في Yenikapı انتقل إلى خط <span class="ln ln-M2">M2</span> باتجاه Taksim</li><li>انزل في Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="ozdilek" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-building"></i></span><h3>ÖzdilekPark</h3></header>
+  <p class="lead">رحلة بسيطة ومباشرة عبر محطة Levent.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>10–12 دقيقة</dd></div><div><dt>الوصول</dt><dd>Levent</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبة واحدة بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Levent</bdi></li><li>مخرج ÖzdilekPark مباشرة</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=ozdilek+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>Levent</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="marmara" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-shop"></i></span><h3>Marmara Forum</h3></header>
+  <p class="lead">من تقسيم تبدأ رحلتك عبر مترو M2 إلى Yenikapı حيث يتوفر تحويل مباشر وواضح. بعدها تنتقل إلى خط M1B باتجاه Kirazlı وتنزل في محطة Zeytinburnu. المول قريب جداً من المحطة ويمكن الوصول إليه عبر مشي مريح لمدة 6 دقائق فقط.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-M1">M1B</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>22–28 دقيقة</dd></div><div><dt>الوصول</dt><dd>Zeytinburnu</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Yenikapı</bdi></li><li>التحويل إلى <span class="ln ln-M1">M1B</span> باتجاه Kirazlı</li><li>النزول في Zeytinburnu</li><li>مشي 6 دقائق إلى المول</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Marmara+Forum+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>من باب المول اتجه نحو محطة Zeytinburnu</li><li>خذ <span class="ln ln-M1">M1B</span> باتجاه Yenikapı</li><li>التحويل إلى <span class="ln ln-M2">M2</span> نحو Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="vialand" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-roller-coaster"></i></span><h3>Vialand (Isfanbul)</h3><img class="logo" src="https://www.vialand.com.tr/images/logo.png" alt="" loading="lazy" onerror="this.remove()"></header>
+  <p class="lead">رحلة ترفيهية ممتعة تبدأ من تقسيم إلى Mecidiyeköy عبر M2، ثم التحويل إلى خط M7 الحديث الذي يوصلك إلى Veysel Karani. من هناك تمشي حوالي 10 دقائق للوصول لمدينة الألعاب والمول.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-M7">M7</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>35–40 دقيقة</dd></div><div><dt>الوصول</dt><dd>Veysel Karani</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Mecidiyeköy</bdi></li><li><bdi><span class="ln ln-M7">M7</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Veysel Karani</bdi></li><li>10 دقائق مشي للوصول</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=vialand+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>الرجوع إلى Veysel Karani</li><li>ركوب <span class="ln ln-M7">M7</span> نحو Mecidiyeköy</li><li>ركوب <span class="ln ln-M2">M2</span> نحو Taksim</li></ol>
+  </details>
+</article>
+</div>
+</section>
 
- <div class="toc-category"><i class="fa-solid fa-city"></i> أحياء / شوارع</div>
- <a class="toc-item" href="#balat"><i class="fa-solid fa-city"></i> حي بلاط</a>
- <a class="toc-item" href="#nisantasi"><i class="fa-solid fa-building"></i> نيشان تاشي</a>
- <a class="toc-item" href="#bebek"><i class="fa-solid fa-water"></i> ببك</a>
- <a class="toc-item" href="#besiktas"><i class="fa-solid fa-ship"></i> بيشكتاش</a>
- <a class="toc-item" href="#uskudar"><i class="fa-solid fa-ferry"></i> أوسكودار</a>
+<section class="cat-group" aria-labelledby="cat-4">
+<h2 class="cat" id="cat-4"><i class="fa-solid fa-ferris-wheel" aria-hidden="true"></i> مدن ملاهي / ترفيه</h2>
+<div class="grid">
+<article class="route" id="tema" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-building-circle-check"></i></span><h3>Tema World Mall</h3></header>
+  <p class="lead">رحلة عبر 3 خطوط: M2 → M1B → M9.</p>
+  <p class="warn">⚠️ لم نتمكن من تأكيد محطة Atakent وخط M9 لهذه الوجهة. تحقق من الطريق على خرائط Google قبل الانطلاق.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-M1">M1B</span><span class="ln ln-M9">M9</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>50–55 دقيقة</dd></div><div><dt>الوصول</dt><dd>Atakent</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Yenikapı</bdi></li><li><bdi><span class="ln ln-M1">M1B</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Kirazlı</bdi></li><li><bdi><span class="ln ln-M9">M9</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Atakent</bdi></li><li>مشي 5 دقائق</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=tema+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>Atakent</li><li><span class="ln ln-M9">M9</span></li><li>Kirazlı</li><li><span class="ln ln-M1">M1B</span></li><li>Yenikapı</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="vadi" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-bag-shopping"></i></span><h3>مول وادي إسطنبول</h3></header>
+  <p class="lead">من محطة تقسيم تبدأ رحلتك بالنزول إلى خط M2 السريع، ثم تحوّل في Sanayi Mahallesi إلى قطار M2 المكوكي المتجه إلى Seyrantepe، وهناك تجد الفينيكولار F3 الذي ينقلك مباشرة إلى المول دون أي مشي إضافي.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-F">F3</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>20–25 دقيقة</dd></div><div><dt>الوصول</dt><dd>محطة F3 Vadistanbul داخل المول</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت (M2 + قطار Seyrantepe + F3)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li>ركوب مترو <span class="ln ln-M2">M2</span> من Taksim باتجاه Hacıosman</li><li>النزول في Sanayi Mahallesi والتحويل إلى قطار <span class="ln ln-M2">M2</span> المكوكي باتجاه Seyrantepe</li><li>النزول في Seyrantepe وركوب <span class="ln ln-F">F3</span> نحو Vadistanbul</li><li>الوصول مباشرة إلى المول</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=vadi+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>من داخل المول اتبع لوحات <span class="ln ln-F">F3</span></li><li>خذ الفينيكولار <span class="ln ln-F">F3</span> عائداً إلى Seyrantepe</li><li>خذ <span class="ln ln-M2">M2</span> نحو Yenikapı (بدّل في Sanayi Mahallesi)</li><li>النزول في Taksim</li></ol>
+  </details>
+</article>
+</div>
+</section>
 
- <div class="toc-category"><i class="fa-solid fa-utensils"></i> مطاعم</div>
- <a class="toc-item" href="#midyeci"><i class="fa-solid fa-fish"></i> Midyeci Yasin – Çengelköy</a>
+<section class="cat-group" aria-labelledby="cat-5">
+<h2 class="cat" id="cat-5"><i class="fa-solid fa-city" aria-hidden="true"></i> أحياء / شوارع</h2>
+<div class="grid">
+<article class="route" id="balat" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-city"></i></span><h3>حي بلاط</h3></header>
+  <p class="lead">أحد أجمل الأحياء التاريخية في إسطنبول. تبدأ رحلتك من M2 إلى Haliç ثم تمشي إلى Cibali، بعدها تأخذ ترام T5 إلى Balat.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-T5">T5</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–30 دقيقة</dd></div><div><dt>الوصول</dt><dd>Balat</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Haliç</bdi></li><li>مشي إلى محطة Cibali</li><li><bdi><span class="ln ln-T5">T5</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Balat</bdi></li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=balat+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>من Balat خذ <span class="ln ln-T5">T5</span> نحو Cibali</li><li>امشِ إلى محطة Haliç</li><li>خذ <span class="ln ln-M2">M2</span> نحو Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="nisantasi" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-building"></i></span><h3>نيشان تاشي</h3></header>
+  <p class="lead">منطقة راقية مليئة بالمقاهي والماركات الفاخرة. الوصول مباشر تقريباً عبر محطة Osmanbey.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>5–7 دقائق</dd></div><div><dt>الوصول</dt><dd>Osmanbey</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبة واحدة بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Osmanbey</bdi></li><li>مشي 5 دقائق نحو قلب نيشان تاشي</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=nisantasi+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <p class="note">العودة بنفس الطريق</p><ol class="stops"><li>المشي إلى Osmanbey</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="bebek" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-water"></i></span><h3>ببك</h3></header>
+  <p class="lead">من أجمل مناطق البوسفور. الوصول عبر M2 ثم M6 ثم F4 إلى Aşiyan.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-M6">M6</span><span class="ln ln-F">F4</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–30 دقيقة</dd></div><div><dt>الوصول</dt><dd>Aşiyan</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li><bdi><span class="ln ln-M2">M2</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Levent</bdi></li><li><bdi><span class="ln ln-M6">M6</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Boğaziçi Üniversitesi</bdi></li><li><bdi><span class="ln ln-F">F4</span></bdi><span class="to" aria-hidden="true"><i class="fa-solid fa-arrow-left-long"></i></span><bdi>Aşiyan</bdi></li><li>مشي 5 دقائق</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=bebek+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>Aşiyan</li><li><span class="ln ln-F">F4</span></li><li>Boğaziçi</li><li><span class="ln ln-M6">M6</span></li><li>Levent</li><li><span class="ln ln-M2">M2</span></li><li>Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="besiktas" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-ship"></i></span><h3>بيشكتاش</h3></header>
+  <p class="lead">منطقة ساحلية نابضة بالحياة، مليئة بالمقاهي، والأسواق، والمطاعم المطلة على البحر. الطريق من تقسيم سهل جداً ويجمع بين الفينيكولار والمشي على كورنيش رائع.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-F">F1</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>20–25 دقيقة</dd></div><div><dt>الوصول</dt><dd>Beşiktaş Square</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبة واحدة بالإسطنبول كارت (F1)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li>ركوب <span class="ln ln-F">F1</span> من Taksim إلى Kabataş</li><li>المشي 10–12 دقيقة شمالاً بمحاذاة البحر حتى Beşiktaş Square</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=besiktas+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>العودة مشياً من ساحة بيشكتاش حتى محطة Kabataş</li><li>ركوب <span class="ln ln-F">F1</span> عائداً إلى Taksim</li></ol>
+  </details>
+</article>
+<article class="route" id="uskudar" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-ferry"></i></span><h3>أوسكودار</h3></header>
+  <p class="lead">من أجمل مناطق الطرف الآسيوي في إسطنبول. تتميز بالكورنيش الطويل، الإطلالة على برج الفتاة، والمقاهي الهادئة على البحر. الوصول إليها ممتع جداً باستخدام الفينيكولار ثم العبّارة البحرية.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-F">F1</span><span class="ln ln-ferry">العبّارة</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–30 دقيقة</dd></div><div><dt>الوصول</dt><dd>Üsküdar Pier</dd></div><div class="wide"><dt>الكلفة</dt><dd>ركوبتان بالإسطنبول كارت (F1 + العبّارة)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li>ركوب <span class="ln ln-F">F1</span> من Taksim إلى Kabataş</li><li>ركوب العبّارة المباشرة من Kabataş إلى Üsküdar</li><li>الوصول مباشرة إلى كورنيش أوسكودار</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=uskudar+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>من رصيف Üsküdar خذ العبّارة إلى Kabataş</li><li>بعد الوصول إلى Kabataş خذ <span class="ln ln-F">F1</span> نحو Taksim</li></ol>
+  </details>
+</article>
+</div>
+</section>
 
+<section class="cat-group" aria-labelledby="cat-6">
+<h2 class="cat" id="cat-6"><i class="fa-solid fa-utensils" aria-hidden="true"></i> مطاعم</h2>
+<div class="grid">
+<article class="route" id="midyeci" data-search="">
+  <header class="route-head"><span class="route-ico" aria-hidden="true"><i class="fa-solid fa-fish"></i></span><h3>Midyeci Yasin – Çengelköy</h3></header>
+  <p class="lead">المطعم يقع مباشرة على ساحل Çengelköy، واحد من أجمل المناطق الهادئة في الجانب الآسيوي. الوصول من تقسيم بسيط جداً عبر Marmaray ثم باص قصير جدًا من Üsküdar إلى Çengelköy.</p>
+  <div class="badges" aria-label="الخطوط المستخدمة"><span class="ln ln-M2">M2</span><span class="ln ln-marmaray">Marmaray</span><span class="ln ln-bus">Bus</span></div>
+  <dl class="facts"><div><dt>المدة</dt><dd>25–35 دقيقة</dd></div><div><dt>الوصول</dt><dd>Çengelköy Sahil – Midyeci Yasin</dd></div><div class="wide"><dt>الكلفة</dt><dd>3 ركوبات بالإسطنبول كارت (M2 + Marmaray + باص)</dd></div></dl>
+  <h4 class="steps-title">الطريق من تقسيم</h4>
+  <ol class="stops"><li>من Taksim خذ مترو <span class="ln ln-M2">M2</span> إلى Yenikapı</li><li>من Yenikapı خذ <span class="ln ln-marmaray">Marmaray</span> باتجاه Üsküdar</li><li>في Üsküdar خذ الباص 15 أو 15F أو 15ÇK باتجاه Çengelköy</li><li>انزل في محطة Çengelköy (المطعم على الساحل مباشرة)</li></ol>
+  <a class="map" href="https://www.google.com/maps/search/?api=1&query=Midyeci+Yasin+Çengelköy+Istanbul" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> افتح في خرائط Google</a>
+  <details class="back"><summary>رحلة العودة</summary>
+    <ol class="stops"><li>من أمام الساحل خذ باص 15 أو 15F أو 15ÇK إلى Üsküdar</li><li>خذ <span class="ln ln-marmaray">Marmaray</span> إلى Yenikapı</li><li>خذ <span class="ln ln-M2">M2</span> إلى Taksim</li></ol>
+  </details>
+</article>
 </div>
+</section>
 
-<!-- SECTIONS BELOW (kept same content but visually improved) -->
+  <p class="empty" id="empty" hidden>لا توجد وجهة تطابق بحثك. جرّب اسماً آخر أو امسح خانة البحث.</p>
+</main>
 
-<div class="section" id="vadi">
-<h2><i class="fa-solid fa-bag-shopping"></i> مول وادي إسطنبول</h2>
-<p><b>شرح مفصل:</b><br>من محطة تقسيم تبدأ رحلتك بالنزول إلى خط M2 السريع، ثم الوصول إلى Sanayi Mahallesi حيث تجد الفينيكولار F3 الذي ينقلك مباشرة إلى مدخل المول دون أي مشي إضافي. الرحلة سريعة ومريحة جداً.</p>
-<p><b>خطوات الطريق:</b><br>1. ركوب مترو M2 من Taksim باتجاه Hacıosman<br>2. النزول في Sanayi Mahallesi<br>3. ركوب F3 مباشرة نحو Vadistanbul<br>4. الوصول مباشرة إلى باب المول</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. من داخل المول اتبع لوحات F3<br>2. خذ الفينيكولار F3 عائداً إلى Sanayi Mahallesi<br>3. خذ M2 نحو Yenikapı<br>4. النزول في Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=vadi+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
+<button class="top" id="toTop" type="button" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
 
-<!-- info row like screenshot -->
-<p><span>⏱️ <b>المدة:</b> 20–25 دقيقة</span><br>
-<span>💰 <b>الكلفة:</b> 20 ₺</span><br>
-<span>🚇 <b>الخط المستخدم:</b> M2 + F3</span><br>
-<span>📍 <b>الوصول:</b> محطة Vadistanbul ملاصقة للمول</span></p>
-</div>
-</div>
-</div>
+<script>
+(function(){
+  var root = document.documentElement, KEY = 'tt-font-size';
+  function setSize(n){
+    n = Math.max(14, Math.min(24, n));
+    root.style.fontSize = n + 'px';
+    try { localStorage.setItem(KEY, String(n)); } catch(e){}
+  }
+  function getSize(){
+    var n = 17;
+    try { n = parseInt(localStorage.getItem(KEY), 10) || 17; } catch(e){}
+    return n;
+  }
+  setSize(getSize());
+  document.getElementById('incFont').addEventListener('click', function(){ setSize(getSize() + 1); });
+  document.getElementById('decFont').addEventListener('click', function(){ setSize(getSize() - 1); });
 
-<div class="section" id="moi">
-<h2><i class="fa-solid fa-bag-shopping"></i> مول إسطنبول</h2>
-<p>
-<b>شرح مفصل:</b><br>
-هذه الرحلة تعتبر من أكثر الرحلات سلاسة رغم أنها تشمل 3 خطوط. تبدأ من M2 إلى Yenikapı، حيث يتوفر التحويل المباشر إلى Marmaray. بعد نزولك في Ataköy، ستجد خط M9 الحديث الذي يأخذك مباشرة إلى Masko، المحطة التي تقع على باب المول تماماً.
-</p>
-<p>
-<b>خطوات الطريق:</b><br>
-1. مترو M2 من Taksim إلى Yenikapı<br>
-2. ركوب Marmaray باتجاه Halkalı والنزول في Ataköy<br>
-3. ركوب M9 إلى Masko — باب المول مباشرة
-</p>
-<div class="return">
-<b>رحلة العودة (مفصلة):</b><br>
-1. من Masko خذ M9 باتجاه Ataköy<br>
-2. التحويل إلى Marmaray باتجاه Gebze والنزول في Yenikapı<br>
-3. ركوب M2 نحو Hacıosman والنزول في Taksim
+  function norm(s){
+    return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i');
+  }
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.route'));
+  cards.forEach(function(c){ c.setAttribute('data-search', norm(c.textContent)); });
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.cat-group'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var idxGroups = Array.prototype.slice.call(document.querySelectorAll('.index-group'));
+  var empty = document.getElementById('empty');
 
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=moi+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-</div>
-</div>
+  document.getElementById('searchBox').addEventListener('input', function(){
+    var q = norm(this.value.trim()), shown = 0, visible = {};
+    cards.forEach(function(c){
+      var ok = !q || c.getAttribute('data-search').indexOf(q) !== -1;
+      c.hidden = !ok;
+      if(ok){ shown++; visible[c.id] = true; }
+    });
+    groups.forEach(function(g){ g.hidden = !g.querySelector('.route:not([hidden])'); });
+    chips.forEach(function(ch){ ch.hidden = !visible[ch.getAttribute('data-for')]; });
+    idxGroups.forEach(function(g){ g.hidden = !g.querySelector('.chip:not([hidden])'); });
+    empty.hidden = shown !== 0;
+  });
 
-<div class="section" id="kale">
-<h2><i class="fa-solid fa-store"></i> Kale Outlet</h2>
-<p>
-<b>شرح مفصل:</b><br>
-تبدأ رحلتك بفينيكولار F1 الذي ينقلك من تقسيم إلى Kabataş خلال أقل من دقيقتين. هناك تربط مباشرة مع ترام T1 الذي يأخذك إلى Güngören، وهي محطة قريبة جداً من المول، ومن ثم تمشي فقط حوالي 8 دقائق للوصول.
-</p>
-<p>
-<b>خطوات الطريق:</b><br>
-1. F1 من Taksim إلى Kabataş<br>
-2. T1 باتجاه Bağcılar والنزول في Güngören<br>
-3. مشي قصير نحو المول
-</p>
-<div class="return">
-<b>رحلة العودة (مفصلة):</b><br>
-1. الرجوع إلى محطة Güngören<br>
-2. ركوب T1 باتجاه Kabataş والنزول هناك<br>
-3. ركوب F1 للعودة إلى Taksim
-
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=kale+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-</div>
-</div>
-
-<div class="section" id="akasya">
-<h2><i class="fa-solid fa-shop"></i> Akasya Mall</h2>
-<p>
-<b>شرح مفصل:</b><br>
-من تقسيم إلى Yenikapı عبر M2، ثم تأخذ Marmaray إلى Üsküdar وهو أسرع الطرق نحو آسيا. بعدها مباشرة ركوب M5 وزيارة محطة Ünalan التي تمتلك مخرجاً مباشراً إلى داخل مجمع أكاسيا.
-</p>
-<p>
-<b>خطوات الطريق:</b><br>
-1. M2 → Yenikapı<br>
-2. Marmaray → Üsküdar<br>
-3. M5 → Ünalan (مخرج مباشر للمول)
-</p>
-<div class="return">
-<b>رحلة العودة (مفصلة):</b><br>
-1. من داخل المول اتجه مباشرة نحو محطة Ünalan<br>
-2. خذ M5 باتجاه Üsküdar<br>
-3. خذ Marmaray نحو Yenikapı<br>
-4. خذ M2 إلى Taksim
-
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=akasya+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-</div>
-</div>
-
-<div class="section" id="forum">
-<h2><i class="fa-solid fa-shop"></i> Forum İstanbul (Bayrampaşa)</h2>
-<p><b>شرح مفصل:</b><br>
-مول ضخم ويضم أكثر من 300 متجر، إضافة إلى IKEA وSEA LIFE. مناسب للتسوق والترفيه وقريب جداً من محطة المترو.
-</p>
-<p><b>خطوات الطريق:</b><br>
-1. من Taksim خذ خط M2 باتجاه Yenikapı<br>
-2. انزل في Yenikapı<br>
-3. من Yenikapı خذ خط M1A أو M1B باتجاه Kirazlı<br>
-4. انزل في محطة Kocatepe<br>
-5. امشِ حوالي 5 دقائق لتوصل إلى Forum İstanbul
-</p>
-<div class="return">
-<b>رحلة العودة (مفصلة):</b><br>
-1. ارجع مشياً إلى محطة Kocatepe<br>
-2. خذ خط M1A أو M1B باتجاه Yenikapı<br>
-3. في Yenikapı انتقل إلى خط M2 باتجاه Taksim<br>
-4. انزل في Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=forum+Istanbul+Bayrampaşa" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M1<br>📍 <b>أقرب محطة:</b> Kocatepe</p>
-</div>
-
-<div class="section" id="vialand">
-<h2><i class="fa-solid fa-roller-coaster"></i> Vialand (Isfanbul)</h2>
-<div style="text-align:center; margin:15px 0;">
-  <img src="https://www.vialand.com.tr/images/logo.png" alt="Vialand Logo" style="max-width:200px; height:auto; border-radius:8px;">
-</div>
-<p><b>شرح مفصل:</b><br>رحلة ترفيهية ممتعة تبدأ من تقسيم إلى Mecidiyeköy عبر M2، ثم التحويل إلى خط M7 الحديث الذي يوصلك إلى Veysel Karani. من هناك تمشي حوالي 10 دقائق للوصول لمدينة الألعاب والمول.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → Mecidiyeköy<br>2. M7 → Veysel Karani<br>3. 10 دقائق مشي للوصول</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. الرجوع إلى Veysel Karani<br>2. ركوب M7 نحو Mecidiyeköy<br>3. ركوب M2 نحو Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=vialand+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 35–40 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M7<br>📍 <b>الوصول:</b> Veysel Karani</p>
-</div>
-
-<div class="section" id="balat">
-<h2><i class="fa-solid fa-city"></i> حي بلاط</h2>
-<p><b>شرح مفصل:</b><br>أحد أجمل الأحياء التاريخية في إسطنبول. تبدأ رحلتك من M2 إلى Haliç ثم تمشي إلى Cibali، بعدها تأخذ ترام T5 إلى Balat.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → Haliç<br>2. مشي إلى محطة Cibali<br>3. T5 → Balat</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. من Balat خذ T5 نحو Cibali<br>2. امشِ إلى محطة Haliç<br>3. خذ M2 نحو Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=balat+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 15 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + T5<br>📍 <b>الوصول:</b> Balat</p>
-</div>
-
-<div class="section" id="nisantasi">
-<h2><i class="fa-solid fa-building"></i> نيشان تاشي</h2>
-<p><b>شرح مفصل:</b><br>منطقة راقية مليئة بالمقاهي والماركات الفاخرة. الوصول مباشر تقريباً عبر محطة Osmanbey.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → Osmanbey<br>2. مشي 5 دقائق نحو قلب نيشان تاشي</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>العودة بنفس الطريق: المشي إلى Osmanbey → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=nisantasi+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 5–7 دقائق<br>💰 <b>الكلفة:</b> 10 ₺<br>🚇 <b>الخط المستخدم:</b> M2<br>📍 <b>الوصول:</b> Osmanbey</p>
-</div>
-
-<div class="section" id="emirgan">
-<h2><i class="fa-solid fa-tree"></i> حديقة أميرجان</h2>
-<p><b>شرح مفصل:</b><br>إحدى أجمل الحدائق المطلة على البوسفور. تتوجه عبر M2 ثم باص مباشر إلى İstinye Bayırı قرب المدخل.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → ITÜ–Ayazağa<br>2. باص 29Ş أو 40B أو 42T → İstinye Bayırı<br>3. وصول مباشر للمدخل</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. العودة بالباص إلى ITÜ–Ayazağa<br>2. M2 إلى Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=emirgan+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 35–40 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Bus<br>📍 <b>الوصول:</b> İstinye Bayırı</p>
-</div>
-
-<div class="section" id="pierloti">
-<h2><i class="fa-solid fa-cable-car"></i> تلة بيير لوتي</h2>
-<p><b>شرح مفصل:</b><br>رحلة بانورامية مميزة عبر T5 ثم التلفريك إلى قمة التلة.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → Haliç<br>2. T5 → Eyüpsultan Teleferik<br>3. التلفريك إلى القمة</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>التلفريك → T5 → Haliç → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=pierloti+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + T5 + Teleferik<br>📍 <b>الوصول:</b> Eyüpsultan</p>
-</div>
-
-<div class="section" id="bebek">
-<h2><i class="fa-solid fa-water"></i> ببك</h2>
-<p><b>شرح مفصل:</b><br>من أجمل مناطق البوسفور. الوصول عبر M2 ثم M6 ثم F4 إلى Aşiyan.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → Levent<br>2. M6 → Boğaziçi Üniversitesi<br>3. F4 → Aşiyan<br>4. مشي 5 دقائق</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>Aşiyan → F4 → Boğaziçi → M6 → Levent → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=bebek+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M6 + F4<br>📍 <b>الوصول:</b> Aşiyan</p>
-</div>
-
-<div class="section" id="tema">
-<h2><i class="fa-solid fa-building-circle-check"></i> Tema World Mall</h2>
-<p><b>شرح مفصل:</b><br>رحلة سلسة عبر 3 خطوط: M2 → M1B → M9.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → Yenikapı<br>2. M1B → Kirazlı<br>3. M9 → Atakent<br>4. مشي 5 دقائق</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>Atakent → M9 → Kirazlı → M1B → Yenikapı → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=tema+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 50–55 دقيقة<br>💰 <b>الكلفة:</b> 25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M1B + M9<br>📍 <b>الوصول:</b> Atakent</p>
-</div>
-
-<div class="section" id="ozdilek">
-<h2><i class="fa-solid fa-building"></i> ÖzdilekPark</h2>
-<p><b>شرح مفصل:</b><br>رحلة بسيطة ومباشرة عبر محطة Levent.</p>
-<p><b>خطوات الطريق:</b><br>1. M2 → Levent<br>2. مخرج ÖzdilekPark مباشرة</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>Levent → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=ozdilek+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 10–12 دقيقة<br>💰 <b>الكلفة:</b> 15 ₺<br>🚇 <b>الخط المستخدم:</b> M2<br>📍 <b>الوصول:</b> Levent</p>
-</div>
-
-<div class="section" id="besiktas">
-<h2><i class="fa-solid fa-ship"></i> بيشكتاش</h2>
-<p><b>شرح مفصل:</b><br>منطقة ساحلية نابضة بالحياة، مليئة بالمقاهي، والأسواق، والمطاعم المطلة على البحر. الطريق من تقسيم سهل جداً ويجمع بين الفينيكولار والمشي على كورنيش رائع.</p>
-<p><b>خطوات الطريق:</b><br>1. ركوب F1 من Taksim إلى Kabataş<br>2. المشي 10–12 دقيقة شمالاً بمحاذاة البحر حتى Beşiktaş Square</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. العودة مشياً من ساحة بيشكتاش حتى محطة Kabataş<br>2. ركوب F1 عائداً إلى Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=besiktas+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 20–25 دقيقة<br>💰 <b>الكلفة:</b> 15 ₺<br>🚇 <b>الخط المستخدم:</b> F1<br>📍 <b>الوصول:</b> Beşiktaş Square</p>
-</div><div class="section" id="uskudar">
-<h2><i class="fa-solid fa-ferry"></i> أوسكودار</h2>
-<p><b>شرح مفصل:</b><br>من أجمل مناطق الطرف الآسيوي في إسطنبول. تتميز بالكورنيش الطويل، الإطلالة على برج الفتاة، والمقاهي الهادئة على البحر. الوصول إليها ممتع جداً باستخدام الفينيكولار ثم العبّارة البحرية.</p>
-<p><b>خطوات الطريق:</b><br>1. ركوب F1 من Taksim إلى Kabataş<br>2. ركوب العبّارة المباشرة من Kabataş إلى Üsküdar<br>3. الوصول مباشرة إلى كورنيش أوسكودار</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>1. من رصيف Üsküdar خذ العبّارة إلى Kabataş<br>2. بعد الوصول إلى Kabataş خذ F1 نحو Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=uskudar+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> F1 + العبّارة<br>📍 <b>الوصول:</b> Üsküdar Pier</p>
-</div>
-<div class="section" id="marmara">
-<h2><i class="fa-solid fa-shop"></i> Marmara Forum</h2>
-<p><b>شرح مفصل:</b><br>من تقسيم تبدأ رحلتك عبر مترو M2 إلى Yenikapı حيث يتوفر تحويل مباشر وواضح. بعدها تنتقل إلى خط M1B باتجاه Kirazlı وتنزل في محطة Zeytinburnu. المول قريب جداً من المحطة ويمكن الوصول إليه عبر مشي مريح لمدة 6 دقائق فقط.</p>
-<p><b>خطوات الطريق:</b><br>
-1. M2 → Yenikapı<br>
-2. التحويل إلى M1B باتجاه Kirazlı<br>
-3. النزول في Zeytinburnu<br>
-4. مشي 6 دقائق إلى المول</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>
-1. من باب المول اتجه نحو محطة Zeytinburnu<br>
-2. خذ M1B باتجاه Yenikapı<br>
-3. التحويل إلى M2 نحو Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Marmara+Forum+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 22–28 دقيقة<br>💰 <b>الكلفة:</b> 15–20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + M1B<br>📍 <b>الوصول:</b> Zeytinburnu</p>
-</div>
-
- <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Metrobüs<br>📍 <b>الوصول:</b> 15 Temmuz Şehitler Köprüsü</p>
-</div>
-
-<!-- NEW LOCATIONS START -->
-
-<div class="section" id="ihlamur">
-<h2><i class="fa-solid fa-building-columns"></i> قصر إهلامور – Ihlamur Kasrı</h2>
-<p><b>شرح مفصل:</b><br>يقع القصر بين بشكتاش ونيشان تاشي، ويُعتبر من أجمل القصور الصغيرة التاريخية. الوصول إليه بسيط جداً عبر محطة Osmanbey ثم مشي مريح لمدة 10 دقائق.</p>
-<p><b>خطوات الطريق:</b><br>
-1. M2 → من Taksim إلى Osmanbey<br>
-2. الخروج باتجاه Valikonağı Caddesi<br>
-3. مشي 10 دقائق نحو القصر
-</p>
-<div class="return"><b>رحلة العودة:</b><br>
-نفس الطريق: مشياً إلى Osmanbey → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Ihlamur+Kasr%C4%B1" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 15–18 دقيقة<br>💰 <b>الكلفة:</b> 10–15 ₺<br>🚇 <b>الخط المستخدم:</b> M2<br>📍 <b>الوصول:</b> Osmanbey</p>
-</div>
-
-
-<div class="section" id="beylerbeyi">
-<h2><i class="fa-solid fa-landmark"></i> قصر بيلار بيه – Beylerbeyi Sarayı</h2>
-<p><b>شرح مفصل:</b><br>يقع القصر على ضفاف البوسفور في الجانب الآسيوي، ويمكن الوصول إليه بسهولة عبر الفينيكولار F1 ثم العبّارة إلى أوسكودار، تليها نزهة قصيرة على الكورنيش.</p>
-<p><b>خطوات الطريق:</b><br>
-1. F1 → Kabataş<br>
-2. العبّارة إلى Üsküdar<br>
-3. مشي 10 دقائق بمحاذاة البحر إلى القصر
-</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>
-Üsküdar → العبّارة → Kabataş → F1 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Beylerbeyi+Sarayi" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 20–25 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> F1 + Ferry<br>📍 <b>الوصول:</b> Üsküdar</p>
-</div>
-
-<div class="section" id="kucuksu">
-<h2><i class="fa-solid fa-landmark-dome"></i> قصر كوتشوك سو – Küçüksu Kasrı</h2>
-<p><b>شرح مفصل:</b><br>من أجمل القصور على البحر. يمكن الوصول إليه عبر عبّارة من Kabataş إلى Beykoz ثم مشي قصير.</p>
-<p><b>خطوات الطريق:</b><br>
-1. F1 → Kabataş<br>
-2. العبّارة إلى Beykoz<br>
-3. مشي 12–15 دقيقة إلى القصر
-</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>
-Beykoz → العبّارة → Kabataş → F1 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=K%C3%BC%C3%A7%C3%BCksu+Kasr%C4%B1" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 35–40 دقيقة<br>💰 <b>الكلفة:</b> 25–30 ₺<br>🚇 <b>الخط المستخدم:</b> F1 + Ferry<br>📍 <b>الوصول:</b> Beykoz</p>
-</div>
-
-<div class="section" id="nakka">
-<h2><i class="fa-solid fa-mountain-sun"></i> Nakkaştepe Millet Bahçesi</h2>
-<p><b>شرح مفصل:</b><br>منتزه بإطلالة خرافية على جسر البوسفور. أسهل طريق بدون باصات: M2 ثم متروبوس فقط.</p>
-<p><b>خطوات الطريق:</b><br>
-1. M2 من Taksim → Şişli–Mecidiyeköy<br>
-2. ممر داخلي إلى Mecidiyeköy Metrobüs<br>
-3. المتروبوس باتجاه Söğütlüçeşme<br>
-4. النزول في 15 Temmuz Şehitler Köprüsü<br>
-5. مشي 12–14 دقيقة نحو مدخل المنتزه
-</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>
-المسار نفسه: 15 Temmuz → Metrobüs → Mecidiyeköy → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Nakka%C5%9Ftepe+Millet+Bah%C3%A7esi" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Metrobüs<br>📍 <b>الوصول:</b> 15 Temmuz Şehitler Köprüsü</p>
-</div>
-
-<!-- NEW LOCATIONS END -->
-
-<div class="section" id="baltajapan">
-<h2><i class="fa-solid fa-tree"></i> حديقة Baltalimanı اليابانية</h2>
-<p><b>شرح مفصل:</b><br>حديقة جميلة وهادئة على الطراز الياباني تقع قرب مضيق البوسفور. يمكن الوصول إليها بسهولة باستخدام مترو M2 ثم المتروبوس، ومن هناك مشي قصير وممتع بين الأشجار حتى المدخل.</p>
-<p><b>خطوات الطريق:</b><br>
-1. M2 → من Taksim إلى Şişli–Mecidiyeköy<br>
-2. الممر الداخلي إلى محطة المتروبوس Mecidiyeköy<br>
-3. المتروبوس باتجاه Sarıyer / Baltalimanı
-<br>4. النزول في محطة Baltalimanı
-<br>5. مشي 7–9 دقائق إلى مدخل الحديقة
-</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>
-Baltalimanı → المتروبوس → Mecidiyeköy → M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Baltalimani+Japanese+Garden" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–30 دقيقة<br>💰 <b>الكلفة:</b> 15–20 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Metrobüs<br>📍 <b>الوصول:</b> Baltalimanı</p>
-</div>
-
-
-<div class="section" id="torium">
-<h2><i class="fa-solid fa-store"></i> Torium Mall</h2>
-<p><b>شرح مفصل:</b><br>الوصول إلى Torium Mall سهل جداً عبر المتروبوس فقط دون الحاجة لأي باصات. أقرب محطة هي <b>Haramidere Sanayi</b> وهي على بعد 6 دقائق مشياً من باب المول.</p>
-<p><b>خطوات الطريق:</b><br>
-1. M2 → من Taksim إلى Şişli–Mecidiyeköy<br>
-2. الممر الداخلي إلى Mecidiyeköy Metrobüs<br>
-3. المتروبوس باتجاه Beylikdüzü / TÜYAP<br>
-4. النزول في <b>Haramidere Sanayi</b><br>
-5. مشي 6 دقائق إلى المول
-</p>
-<div class="return"><b>رحلة العودة (مفصلة):</b><br>
-1. المشي من Torium إلى محطة Haramidere Sanayi<br>
-2. المتروبوس باتجاه Zincirlikuyu<br>
-3. النزول في Mecidiyeköy<br>
-4. M2 → Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Torium+Mall+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p></div>
-<p>⏱️ <b>المدة:</b> 35–40 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Metrobus<br>📍 <b>الوصول:</b> Haramidere Sanayi</p>
-</div>
-
-<div class="section" id="midyeci">
-<h2><i class="fa-solid fa-fish"></i> Midyeci Yasin – Çengelköy</h2>
-<p><b>شرح مفصل:</b><br>
-المطعم يقع مباشرة على ساحل Çengelköy، واحد من أجمل المناطق الهادئة في الجانب الآسيوي. الوصول من تقسيم بسيط جداً عبر Marmaray ثم باص قصير جدًا من Üsküdar إلى Çengelköy.
-</p>
-<p><b>خطوات الطريق:</b><br>
-1. من Taksim خذ مترو M2 إلى Yenikapı<br>
-2. من Yenikapı خذ Marmaray باتجاه Üsküdar<br>
-3. في Üsküdar خذ الباص 15 أو 15F أو 15ÇK باتجاه Çengelköy<br>
-4. انزل في محطة Çengelköy (المطعم على الساحل مباشرة)
-</p>
-<div class="return">
-<b>رحلة العودة (مفصلة):</b><br>
-1. من أمام الساحل خذ باص 15 أو 15F أو 15ÇK إلى Üsküdar<br>
-2. خذ Marmaray إلى Yenikapı<br>
-3. خذ M2 إلى Taksim
-<p style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=Midyeci+Yasin+Çengelköy+Istanbul" target="_blank" style="color:#0d47a1; font-weight:bold;">📍 افتح الموقع على خرائط Google</a></p>
-</div>
-<p>⏱️ <b>المدة:</b> 25–35 دقيقة<br>💰 <b>الكلفة:</b> 20–25 ₺<br>🚇 <b>الخط المستخدم:</b> M2 + Marmaray + Bus<br>📍 <b>الوصول:</b> Çengelköy Sahil – Midyeci Yasin</p>
-</div>
-
-<button class="back-top""" onclick="backToTop()" title="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+  var top = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){ top.classList.toggle('show', window.scrollY > 700); }, { passive: true });
+  top.addEventListener('click', function(){ window.scrollTo({ top: 0 }); });
+})();
+</script>
 </body>
 </html>
